@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 2 - Grammar Practice (Past Perfect) | English Lernzeit</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Permanent+Marker&family=Patrick+Hand&family=Caveat:wght@600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --olive-green: #5f6b38;
+            --dark-olive: #4a5329;
+            --burnt-orange: #d97736;
+            --light-orange: #e89456;
+            --vintage-cream: #f5ede1;
+            --aged-paper: #ebe3d5;
+            --dark-text: #2c2418;
+        }
+        
+        body {
+            font-family: 'Patrick Hand', cursive;
+            background-image: url('paper_texture_bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .content-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* Scrapbook Page Background */
+        .reading-content {
+            background: 
+                linear-gradient(135deg, rgba(245, 237, 225, 0.9) 0%, rgba(235, 227, 213, 0.95) 100%);
+            padding: 50px;
+            border-radius: 3px;
+            box-shadow: 
+                0 10px 40px rgba(0, 0, 0, 0.3),
+                inset 0 0 100px rgba(95, 107, 56, 0.05);
+            margin-bottom: 30px;
+            position: relative;
+            border: 1px solid rgba(95, 107, 56, 0.2);
+        }
+        
+        .reading-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(95, 107, 56, 0.02) 2px, rgba(95, 107, 56, 0.02) 4px),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(95, 107, 56, 0.02) 2px, rgba(95, 107, 56, 0.02) 4px);
+            pointer-events: none;
+            opacity: 0.5;
+        }
+        
+        /* Main Title with Handwriting */
+        .scrapbook-title {
+            font-family: 'Caveat', cursive;
+            font-size: 4em;
+            color: var(--olive-green);
+            text-align: center;
+            margin-bottom: 10px;
+            position: relative;
+            text-shadow: 2px 2px 0px rgba(217, 119, 54, 0.1);
+        }
+        
+        .scrapbook-subtitle {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.8em;
+            color: var(--burnt-orange);
+            text-align: center;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+        
+        /* Polaroid Photo Styling */
+        .polaroid {
+            background: white;
+            padding: 15px;
+            padding-bottom: 60px;
+            box-shadow: 
+                0 8px 20px rgba(0, 0, 0, 0.25),
+                0 2px 4px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            position: relative;
+            transform: rotate(-2deg);
+            margin: 20px;
+        }
+        
+        .polaroid img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .polaroid-caption {
+            font-family: 'Permanent Marker', cursive;
+            text-align: center;
+            margin-top: 15px;
+            font-size: 1.3em;
+            color: var(--dark-text);
+        }
+        
+        .polaroid.right {
+            transform: rotate(3deg);
+            float: right;
+        }
+        
+        .polaroid.left {
+            transform: rotate(-3deg);
+            float: left;
+        }
+        
+        /* Step Sections with Scrapbook Elements */
+        .step-section {
+            margin-bottom: 60px;
+            position: relative;
+            clear: both;
+        }
+        
+        .step-section h2 {
+            font-family: 'Caveat', cursive;
+            color: var(--olive-green);
+            font-size: 3em;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .step-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--burnt-orange);
+            transform: skewY(-1deg);
+        }
+        
+        /* Reading Text Box - looks like torn paper */
+        .reading-text {
+            background: linear-gradient(135deg, #fcf9f4 0%, #f5f0e8 100%);
+            padding: 30px;
+            border-radius: 2px;
+            margin: 25px 0;
+            position: relative;
+            box-shadow: 
+                0 4px 10px rgba(0, 0, 0, 0.15),
+                inset 0 0 0 1px rgba(95, 107, 56, 0.1);
+            font-size: 1.15em;
+            line-height: 1.9;
+            color: var(--dark-text);
+        }
+        
+        .reading-text::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            width: 100px;
+            height: 40px;
+            background-image: url('tape_strip.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            transform: rotate(-5deg);
+            opacity: 0.9;
+        }
+        
+        /* Task Box with Washi Tape */
+        .task-box {
+            background: linear-gradient(135deg, #f8f5ef 0%, #f0ebe3 100%);
+            padding: 30px;
+            border-radius: 3px;
+            margin: 25px 0;
+            position: relative;
+            border: 2px solid rgba(95, 107, 56, 0.15);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .task-box::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 250px;
+            height: 50px;
+            background-image: url('washi_floral.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.8;
+        }
+        
+        .task-box h3 {
+            font-family: 'Caveat', cursive;
+            color: var(--olive-green);
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .task-box h3 img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+        
+        /* Input Fields with Handwriting Feel */
+        .exercise-item {
+            margin: 20px 0;
+            font-size: 1.15em;
+            color: var(--dark-text);
+        }
+        
+        .exercise-item input[type="text"] {
+            border: none;
+            border-bottom: 2px dashed var(--olive-green);
+            background: transparent;
+            padding: 8px 12px;
+            font-size: 1.1em;
+            min-width: 300px;
+            font-family: 'Patrick Hand', cursive;
+            color: var(--dark-text);
+        }
+        
+        .exercise-item input[type="text"]:focus {
+            outline: none;
+            border-bottom-color: var(--burnt-orange);
+            background: rgba(217, 119, 54, 0.05);
+        }
+        
+        .exercise-item.wide input[type="text"] {
+            min-width: 100%;
+            width: 100%;
+        }
+        
+        textarea {
+            width: 100%;
+            min-height: 150px;
+            border: 2px solid var(--olive-green);
+            border-radius: 3px;
+            padding: 15px;
+            font-size: 1.1em;
+            font-family: 'Patrick Hand', cursive;
+            line-height: 1.8;
+            background: linear-gradient(135deg, #fffcf7 0%, #faf7f0 100%);
+            color: var(--dark-text);
+            resize: vertical;
+        }
+        
+        textarea:focus {
+            outline: none;
+            border-color: var(--burnt-orange);
+            box-shadow: 0 0 0 3px rgba(217, 119, 54, 0.1);
+        }
+        
+        /* Challenge Box - Dark Scrapbook Card */
+        .challenge-box {
+            background: linear-gradient(145deg, var(--olive-green) 0%, var(--dark-olive) 100%);
+            padding: 35px;
+            border-radius: 5px;
+            margin: 30px 0;
+            position: relative;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            color: var(--vintage-cream);
+        }
+        
+        .challenge-box::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 40px;
+            height: 40px;
+            background-image: url('pushpin_orange.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+        }
+        
+        .challenge-box::after {
+            content: '';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            background-image: url('pushpin_red.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+        }
+        
+        .challenge-box h3 {
+            font-family: 'Caveat', cursive;
+            color: var(--vintage-cream);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .challenge-box h4 {
+            color: var(--light-orange);
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+        
+        .challenge-box p,
+        .challenge-box li {
+            color: var(--vintage-cream);
+        }
+        
+        .challenge-box textarea {
+            background: rgba(255, 255, 255, 0.95);
+            border-color: var(--burnt-orange);
+        }
+        
+        /* Formula Box - Comparison Table Styling */
+        .formula-box {
+            background: linear-gradient(135deg, #fffbf0 0%, #fff5e0 100%);
+            padding: 25px;
+            border-radius: 3px;
+            margin: 25px 0;
+            position: relative;
+            border: 3px solid var(--burnt-orange);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .formula-box::before {
+            content: '';
+            position: absolute;
+            top: -25px;
+            left: 30px;
+            width: 150px;
+            height: 60px;
+            background-image: url('tape_cross.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.9;
+        }
+        
+        .formula-box h3 {
+            font-family: 'Caveat', cursive;
+            color: var(--burnt-orange);
+            font-size: 2em;
+        }
+        
+        /* Comparison Tables */
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(145deg, var(--olive-green) 0%, var(--dark-olive) 100%);
+            color: var(--vintage-cream);
+            padding: 15px 20px;
+            font-family: 'Caveat', cursive;
+            font-size: 1.5em;
+            text-align: center;
+        }
+        
+        .comparison-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(95, 107, 56, 0.15);
+            font-size: 1.1em;
+            vertical-align: top;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: rgba(95, 107, 56, 0.05);
+        }
+        
+        .comparison-table .german {
+            border-right: 2px solid var(--burnt-orange);
+        }
+        
+        /* Tip Box */
+        .tip-box {
+            background: linear-gradient(145deg, #fff3cd 0%, #ffecb5 100%);
+            padding: 20px 25px;
+            border-radius: 5px;
+            margin: 25px 0;
+            border-left: 5px solid var(--burnt-orange);
+            font-size: 1.15em;
+        }
+        
+        .tip-box strong {
+            color: var(--burnt-orange);
+        }
+        
+        /* Situation Images */
+        .situation-image {
+            width: 100%;
+            max-width: 700px;
+            margin: 20px auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            border: 4px solid white;
+        }
+        
+        /* Timeline Image */
+        .timeline-image {
+            width: 100%;
+            margin: 30px 0;
+            border-radius: 8px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            border: 5px solid white;
+        }
+        
+        /* Starter Ideas Box */
+        .starter-ideas {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 20px;
+            border-radius: 3px;
+            margin: 20px 0;
+            border: 2px dashed var(--burnt-orange);
+        }
+        
+        .starter-ideas h4 {
+            color: var(--olive-green);
+            font-size: 1.3em;
+        }
+        
+        ul.requirements {
+            margin-left: 25px;
+            margin-top: 15px;
+        }
+        
+        ul.requirements li {
+            margin: 12px 0;
+            font-size: 1.1em;
+        }
+        
+        /* Historical Section Labels */
+        .history-label {
+            background: linear-gradient(145deg, var(--burnt-orange) 0%, #c56830 100%);
+            color: var(--vintage-cream);
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 25px 0 15px;
+            font-family: 'Caveat', cursive;
+            font-size: 1.5em;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Buttons with Scrapbook Style */
+        .pdf-button {
+            display: inline-block;
+            background: linear-gradient(145deg, var(--burnt-orange) 0%, #c56830 100%);
+            color: var(--vintage-cream);
+            padding: 18px 45px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Caveat', cursive;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .pdf-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Button Container */
+        .button-container {
+            text-align: center;
+            margin-top: 50px;
+            position: relative;
+        }
+        
+        /* Video Embed Container */
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 30px auto;
+            padding-bottom: 56.25%;
+            background: #000;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* Infographic Image */
+        .infographic-image {
+            width: 100%;
+            margin: 30px 0;
+            border-radius: 10px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+            border: 5px solid white;
+        }
+        
+        /* Section divider */
+        .section-divider {
+            text-align: center;
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        .section-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--olive-green), transparent);
+        }
+        
+        .section-divider span {
+            background: var(--aged-paper);
+            padding: 0 20px;
+            position: relative;
+            font-family: 'Caveat', cursive;
+            font-size: 1.5em;
+            color: var(--olive-green);
+        }
+        
+        /* Exercise subsection */
+        .exercise-subsection {
+            background: rgba(255, 255, 255, 0.5);
+            padding: 25px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid rgba(95, 107, 56, 0.2);
+        }
+        
+        .exercise-subsection h4 {
+            font-family: 'Caveat', cursive;
+            color: var(--olive-green);
+            font-size: 1.6em;
+            margin-bottom: 15px;
+        }
+        
+        /* Vocab table styling */
+        .vocab-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            font-size: 1em;
+        }
+        
+        .vocab-table th {
+            background: linear-gradient(145deg, var(--olive-green) 0%, var(--dark-olive) 100%);
+            color: var(--vintage-cream);
+            padding: 12px 15px;
+            font-family: 'Caveat', cursive;
+            font-size: 1.3em;
+            text-align: center;
+        }
+        
+        .vocab-table td {
+            padding: 10px 15px;
+            border-bottom: 1px solid rgba(95, 107, 56, 0.15);
+            text-align: center;
+        }
+        
+        .vocab-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .vocab-table tr:nth-child(even) {
+            background: rgba(95, 107, 56, 0.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="content-container">
+        <!-- Scrapbook Page -->
+        <div class="reading-content">
+            
+            <!-- Main Title -->
+            <h1 class="scrapbook-title">Past Perfect</h1>
+            <p class="scrapbook-subtitle">What happened first?</p>
+            
+            <!-- Polaroid Images Side by Side -->
+            <div style="text-align: center; margin: 40px 0 60px; clear: both;">
+                <div class="polaroid left" style="width: 320px; display: inline-block; margin: 20px; transform: rotate(-3deg);">
+                    <img src="polaroid_church.png" alt="Southern Black Church">
+                    <div class="polaroid-caption">SUNDAY SERVICE, 1920</div>
+                </div>
+                
+                <div class="polaroid right" style="width: 320px; display: inline-block; margin: 20px; transform: rotate(2deg);">
+                    <img src="polaroid_blues.png" alt="Delta Blues Musicians">
+                    <div class="polaroid-caption">DELTA BLUES, 1935</div>
+                </div>
+            </div>
+            
+            <!-- Step 1: Simple Past Revision -->
+            <div class="step-section">
+                <h2>Step 1: Erinnere dich! (Simple Past Review)</h2>
+                <p style="font-style: italic; color: #4a5329; font-size: 1.1em;">Before we learn the Past Perfect, let's quickly review the <strong>Simple Past</strong>!</p>
+                
+                <!-- Simple Past Infographic -->
+                <div style="text-align: center; margin: 30px 0;">
+                    <img src="simple_past_infographic.png" alt="Simple Past Review Infographic" class="infographic-image">
+                </div>
+                
+                <div class="tip-box">
+                    <strong>Erinnerung:</strong> Das Simple Past beschreibt abgeschlossene Handlungen in der Vergangenheit. Regelmäßige Verben: <strong>+ed</strong> (walked, played). Unregelmäßige Verben: <strong>2. Spalte lernen!</strong> (go → went, see → saw)
+                </div>
+                
+                <!-- Comic Story Exercise -->
+                <div class="task-box" style="margin-top: 30px;">
+                    <h3>A Bad Day at School — Tell the Story!</h3>
+                    <p style="font-size: 1.1em;">Look and write. Put the <span style="color: var(--burnt-orange); font-weight: bold;">orange verbs</span> into the <strong>Simple Past</strong>.</p>
+                    
+                    <!-- Comic Strip Grid -->
+                    <div class="comic-grid" style="display: grid; grid-template-columns: 150px 1fr; gap: 25px; margin-top: 25px;">
+                        
+                        <!-- Panel 1 -->
+                        <div class="comic-panel" style="background: white; padding: 8px; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); border: 3px solid #333;">
+                            <img src="comic_panel_1.png" alt="Panel 1 - Sleeping too long" style="width: 100%; border-radius: 3px;">
+                        </div>
+                        <div style="display: flex; flex-direction: column; justify-content: center;">
+                            <div style="background: rgba(217, 119, 54, 0.15); padding: 12px 18px; border-radius: 5px; margin-bottom: 12px; display: inline-block; border-left: 4px solid var(--burnt-orange);">
+                                <span style="color: var(--burnt-orange); font-weight: bold; font-size: 1.1em;">sleep</span> <span style="color: #555;">too long</span>
+                            </div>
+                            <div class="exercise-item">
+                                <strong>1.</strong> Yesterday I <input type="text" placeholder="your answer" style="min-width: 280px;">.
+                            </div>
+                        </div>
+                        
+                        <!-- Panel 2 -->
+                        <div class="comic-panel" style="background: white; padding: 8px; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); border: 3px solid #333;">
+                            <img src="comic_panel_2.png" alt="Panel 2 - Missing the bus" style="width: 100%; border-radius: 3px;">
+                        </div>
+                        <div style="display: flex; flex-direction: column; justify-content: center;">
+                            <div style="background: rgba(217, 119, 54, 0.15); padding: 12px 18px; border-radius: 5px; margin-bottom: 12px; display: inline-block; border-left: 4px solid var(--burnt-orange);">
+                                <span style="color: var(--burnt-orange); font-weight: bold; font-size: 1.1em;">not + get</span> <span style="color: #555;">the bus to school</span>
+                            </div>
+                            <div class="exercise-item">
+                                <strong>2.</strong> Then I <input type="text" placeholder="your answer" style="min-width: 280px;">.
+                            </div>
+                        </div>
+                        
+                        <!-- Panel 3 -->
+                        <div class="comic-panel" style="background: white; padding: 8px; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); border: 3px solid #333;">
+                            <img src="comic_panel_3.png" alt="Panel 3 - Can't find maths book" style="width: 100%; border-radius: 3px;">
+                        </div>
+                        <div style="display: flex; flex-direction: column; justify-content: center;">
+                            <div style="background: rgba(217, 119, 54, 0.15); padding: 12px 18px; border-radius: 5px; margin-bottom: 12px; display: inline-block; border-left: 4px solid var(--burnt-orange);">
+                                <span style="color: var(--burnt-orange); font-weight: bold; font-size: 1.1em;">not + find</span> <span style="color: #555;">my maths book</span>
+                            </div>
+                            <div class="exercise-item">
+                                <strong>3.</strong> At school I <input type="text" placeholder="your answer" style="min-width: 280px;">.
+                            </div>
+                        </div>
+                        
+                        <!-- Panel 4 -->
+                        <div class="comic-panel" style="background: white; padding: 8px; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); border: 3px solid #333;">
+                            <img src="comic_panel_4.png" alt="Panel 4 - Teacher angry" style="width: 100%; border-radius: 3px;">
+                        </div>
+                        <div style="display: flex; flex-direction: column; justify-content: center;">
+                            <div style="background: rgba(217, 119, 54, 0.15); padding: 12px 18px; border-radius: 5px; margin-bottom: 12px; display: inline-block; border-left: 4px solid var(--burnt-orange);">
+                                <span style="color: var(--burnt-orange); font-weight: bold; font-size: 1.1em;">be</span> <span style="color: #555;">very angry with me</span>
+                            </div>
+                            <div class="exercise-item">
+                                <strong>4.</strong> Ms Rees <input type="text" placeholder="your answer" style="min-width: 280px;">.
+                            </div>
+                        </div>
+                        
+                        <!-- Panel 5 -->
+                        <div class="comic-panel" style="background: white; padding: 8px; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); border: 3px solid #333;">
+                            <img src="comic_panel_5.png" alt="Panel 5 - Lots of homework" style="width: 100%; border-radius: 3px;">
+                        </div>
+                        <div style="display: flex; flex-direction: column; justify-content: center;">
+                            <div style="background: rgba(217, 119, 54, 0.15); padding: 12px 18px; border-radius: 5px; margin-bottom: 12px; display: inline-block; border-left: 4px solid var(--burnt-orange);">
+                                <span style="color: var(--burnt-orange); font-weight: bold; font-size: 1.1em;">have</span> <span style="color: #555;">to do lots of homework</span>
+                            </div>
+                            <div class="exercise-item">
+                                <strong>5.</strong> At home I <input type="text" placeholder="your answer" style="min-width: 280px;">.
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Transition to Past Perfect -->
+            <div class="section-divider">
+                <span>✨ Now let's learn the Past Perfect! ✨</span>
+            </div>
+            
+            <!-- Past Perfect Introduction -->
+            <div class="step-section">
+                <h2>Step 2: Das Past Perfect</h2>
+                <p style="font-style: italic; color: #4a5329; font-size: 1.1em;">Now that you've reviewed the Simple Past, let's learn how to talk about what happened <strong>BEFORE</strong> something else!</p>
+                
+                <!-- Past Perfect Infographic -->
+                <div style="text-align: center; margin: 30px 0;">
+                    <img src="unnamed__1_.png" alt="Past Perfect Guide Infographic" class="infographic-image">
+                </div>
+                
+                <!-- Video Section -->
+                <div class="formula-box" style="margin-top: 40px;">
+                    <h3>Watch & Learn</h3>
+                    <p style="margin-bottom: 15px;">Watch this explanation video to understand the Past Perfect:</p>
+                    <div style="text-align: center;">
+                        <video controls style="width: 100%; max-width: 700px; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.2);">
+                            <source src="Das_Past_Perfect_meistern.mp4" type="video/mp4">
+                            Your browser does not support the video element.
+                        </video>
+                    </div>
+                </div>
+            
+                <div class="section-divider">
+                    <span>✨ Plusquamperfekt und Past Perfect — mehr gleich als verschieden! ✨</span>
+                </div>
+                
+                <!-- What Happened First - now part of Step 2 -->
+                <h3 style="font-family: 'Caveat', cursive; color: var(--olive-green); font-size: 2.2em; margin: 30px 0 20px;">What Happened First?</h3>
+                <p style="font-style: italic; color: #4a5329; font-size: 1.1em;">Look at the pictures. Each pair shows two events. Write what happened <strong>FIRST</strong> using the Past Perfect.</p>
+                
+                <!-- Situation 1 -->
+                <div class="task-box">
+                    <h3>Situation 1: The Bus</h3>
+                    <img src="08-2903.png" alt="Bus situation - person arrives, bus leaves" class="situation-image">
+                    
+                    <table class="comparison-table" style="max-width: 500px; margin: 20px auto;">
+                        <tr>
+                            <th>Picture A</th>
+                            <th>Picture B</th>
+                        </tr>
+                        <tr>
+                            <td class="german" style="text-align: center;"><em>The person arrives</em></td>
+                            <td style="text-align: center;"><em>The bus leaves</em></td>
+                        </tr>
+                    </table>
+                    
+                    <div class="exercise-item wide">
+                        <strong>Complete:</strong> When I arrived at the bus stop, the bus <input type="text" placeholder="your answer" style="min-width: 400px;">.
+                    </div>
+                </div>
+                
+                <!-- Situation 2 -->
+                <div class="task-box">
+                    <h3>Situation 2: The Test</h3>
+                    <img src="11-2903.png" alt="Test situation - student finishes, teacher collects" class="situation-image">
+                    
+                    <table class="comparison-table" style="max-width: 500px; margin: 20px auto;">
+                        <tr>
+                            <th>Picture A</th>
+                            <th>Picture B</th>
+                        </tr>
+                        <tr>
+                            <td class="german" style="text-align: center;"><em>The student finished the test.</em></td>
+                            <td style="text-align: center;"><em>The teacher collects</em></td>
+                        </tr>
+                    </table>
+                    
+                    <div class="exercise-item wide">
+                        <strong>Complete:</strong> The teacher collected the papers, when everyone <input type="text" placeholder="your answer" style="min-width: 400px;">.
+                    </div>
+                </div>
+                
+                <!-- Situation 3 -->
+                <div class="task-box">
+                    <h3>Situation 3: Dinner</h3>
+                    <img src="14-2903.png" alt="Dinner situation - mum cooks, dad comes home" class="situation-image">
+                    
+                    <table class="comparison-table" style="max-width: 500px; margin: 20px auto;">
+                        <tr>
+                            <th>Picture A</th>
+                            <th>Picture B</th>
+                        </tr>
+                        <tr>
+                            <td class="german" style="text-align: center;"><em>Mum cooks dinner</em></td>
+                            <td style="text-align: center;"><em>Dad comes home</em></td>
+                        </tr>
+                    </table>
+                    
+                    <div class="exercise-item wide">
+                        <strong>Complete:</strong> When Dad came home, Mum <input type="text" placeholder="your answer" style="min-width: 400px;">.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-divider">
+                <span>✨ Plusquamperfekt und Past Perfect — mehr gleich als verschieden! ✨</span>
+            </div>
+            
+            <!-- The Formula Section -->
+            <div class="formula-box">
+                <h3>Die Formel / The Formula</h3>
+                
+                <table class="comparison-table">
+                    <tr>
+                        <th>🇩🇪 DEUTSCH</th>
+                        <th>🇬🇧 ENGLISH</th>
+                    </tr>
+                    <tr>
+                        <td class="german">
+                            <strong>hatte / war</strong> + <strong>Partizip II</strong><br><br>
+                            Ich <em>hatte</em> gegessen.<br>
+                            Sie <em>war</em> gegangen.
+                        </td>
+                        <td>
+                            <strong>had</strong> + <strong>past participle</strong><br><br>
+                            I <em>had</em> eaten.<br>
+                            She <em>had</em> gone.
+                        </td>
+                    </tr>
+                </table>
+                
+                <table class="comparison-table" style="margin-top: 25px;">
+                    <tr>
+                        <th>✓ Was ist GLEICH?</th>
+                        <th>⚠ Was ist ANDERS?</th>
+                    </tr>
+                    <tr>
+                        <td class="german">
+                            • Struktur: Hilfsverb + Partizip<br><br>
+                            • Bedeutung: Aktion VOR einer anderen<br><br>
+                            • Signalwörter: when/als, before/bevor, after/nachdem, already/schon
+                        </td>
+                        <td>
+                            • DE: hatte ODER war<br><br>
+                            • EN: nur <strong>HAD</strong> (immer!)<br><br>
+                            • Wortstellung: DE Partizip am Ende, EN Partizip nach had
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!-- Parallel Examples -->
+            <div class="task-box">
+                <h3>Parallele Beispiele / Parallel Examples</h3>
+                
+                <table class="comparison-table">
+                    <tr>
+                        <th>🇩🇪 Deutsch</th>
+                        <th>🇬🇧 English</th>
+                    </tr>
+                    <tr>
+                        <td class="german">Als ich ankam, war der Bus schon abgefahren.</td>
+                        <td>When I arrived, the bus had already left.</td>
+                    </tr>
+                    <tr>
+                        <td class="german">Sie hatte das Buch gelesen.</td>
+                        <td>She had read the book.</td>
+                    </tr>
+                    <tr>
+                        <td class="german">Ich war noch nie nach London geflogen.</td>
+                        <td>I had never flown to London.</td>
+                    </tr>
+                    <tr>
+                        <td class="german">Nachdem er gegessen hatte, ging er schlafen.</td>
+                        <td>After he had eaten, he went to sleep.</td>
+                    </tr>
+                    <tr>
+                        <td class="german">Sie hatten die Hausaufgaben nicht gemacht.</td>
+                        <td>They had not done the homework.</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!-- Verb Table -->
+            <div class="formula-box">
+                <h3>Wichtige Verben / Important Verbs</h3>
+                
+                <table class="vocab-table">
+                    <tr>
+                        <th>Infinitiv (DE)</th>
+                        <th>Partizip II</th>
+                        <th>Infinitive (EN)</th>
+                        <th>Past Perfect</th>
+                    </tr>
+                    <tr>
+                        <td>essen</td>
+                        <td>gegessen</td>
+                        <td>eat</td>
+                        <td>had eaten</td>
+                    </tr>
+                    <tr>
+                        <td>trinken</td>
+                        <td>getrunken</td>
+                        <td>drink</td>
+                        <td>had drunk</td>
+                    </tr>
+                    <tr>
+                        <td>sehen</td>
+                        <td>gesehen</td>
+                        <td>see</td>
+                        <td>had seen</td>
+                    </tr>
+                    <tr>
+                        <td>gehen</td>
+                        <td>gegangen</td>
+                        <td>go</td>
+                        <td>had gone</td>
+                    </tr>
+                    <tr>
+                        <td>kommen</td>
+                        <td>gekommen</td>
+                        <td>come</td>
+                        <td>had come</td>
+                    </tr>
+                    <tr>
+                        <td>schreiben</td>
+                        <td>geschrieben</td>
+                        <td>write</td>
+                        <td>had written</td>
+                    </tr>
+                    <tr>
+                        <td>lesen</td>
+                        <td>gelesen</td>
+                        <td>read</td>
+                        <td>had read</td>
+                    </tr>
+                    <tr>
+                        <td>machen</td>
+                        <td>gemacht</td>
+                        <td>do / make</td>
+                        <td>had done / made</td>
+                    </tr>
+                    <tr>
+                        <td>nehmen</td>
+                        <td>genommen</td>
+                        <td>take</td>
+                        <td>had taken</td>
+                    </tr>
+                    <tr>
+                        <td>fliegen</td>
+                        <td>geflogen</td>
+                        <td>fly</td>
+                        <td>had flown</td>
+                    </tr>
+                </table>
+            </div>
+            
+                <!-- Exercises - still part of Step 2 -->
+                <h3 style="font-family: 'Caveat', cursive; color: var(--olive-green); font-size: 2.2em; margin: 40px 0 20px;">Übungen / Exercises</h3>
+                
+                <div class="tip-box">
+                    <strong>TIPP:</strong> Wenn du im Deutschen "war" siehst (war gegangen, war geflogen), nutze trotzdem <strong>HAD</strong> im Englischen — niemals "was"!
+                </div>
+                
+                <!-- Exercise A -->
+                <div class="exercise-subsection">
+                    <h4>A. Übersetze ins Englische (Translate into English):</h4>
+                    
+                    <div class="exercise-item wide">
+                        <strong>1.</strong> Ich hatte meine Hausaufgaben vergessen.<br>
+                        → <input type="text" placeholder="your answer" style="width: 100%; margin-top: 8px;">
+                    </div>
+                    <div class="exercise-item wide">
+                        <strong>2.</strong> Sie war schon eingeschlafen.<br>
+                        → <input type="text" placeholder="your answer" style="width: 100%; margin-top: 8px;">
+                    </div>
+                    <div class="exercise-item wide">
+                        <strong>3.</strong> Wir hatten den Film schon gesehen.<br>
+                        → <input type="text" placeholder="your answer" style="width: 100%; margin-top: 8px;">
+                    </div>
+                    <div class="exercise-item wide">
+                        <strong>4.</strong> Er hatte nichts gegessen.<br>
+                        → <input type="text" placeholder="your answer" style="width: 100%; margin-top: 8px;">
+                    </div>
+                    <div class="exercise-item wide">
+                        <strong>5.</strong> Die Kinder waren nach Hause gelaufen.<br>
+                        → <input type="text" placeholder="your answer" style="width: 100%; margin-top: 8px;">
+                    </div>
+                </div>
+                
+                <!-- Exercise B -->
+                <div class="exercise-subsection">
+                    <h4>B. Fülle die Lücken aus (Fill in the gaps with Past Perfect):</h4>
+                    
+                    <div class="exercise-item">
+                        <strong>1.</strong> When I got home, my sister <input type="text" placeholder="your answer"> (eat) all the cake.
+                    </div>
+                    <div class="exercise-item">
+                        <strong>2.</strong> The train <input type="text" placeholder="your answer"> (leave) before we arrived at the station.
+                    </div>
+                    <div class="exercise-item">
+                        <strong>3.</strong> She was tired because she <input type="text" placeholder="your answer"> (not / sleep) well.
+                    </div>
+                    <div class="exercise-item">
+                        <strong>4.</strong> I <input type="text" placeholder="your answer"> (never / see) such a beautiful sunset before.
+                    </div>
+                    <div class="exercise-item">
+                        <strong>5.</strong> They <input type="text" placeholder="your answer"> (finish) their homework before dinner.
+                    </div>
+                </div>
+                
+                <!-- Exercise C -->
+                <div class="exercise-subsection">
+                    <h4>C. Korrigiere die Fehler (Correct the mistakes):</h4>
+                    
+                    <div class="exercise-item wide">
+                        <strong>1.</strong> <em style="color: #c56830;">She was gone to school before I woke up.</em><br>
+                        → <input type="text" placeholder="your answer" style="width: 100%; margin-top: 8px;">
+                    </div>
+                    <div class="exercise-item wide">
+                        <strong>2.</strong> <em style="color: #c56830;">I had forgot my keys at home.</em><br>
+                        → <input type="text" placeholder="your answer" style="width: 100%; margin-top: 8px;">
+                    </div>
+                    <div class="exercise-item wide">
+                        <strong>3.</strong> <em style="color: #c56830;">We was eaten before the movie started.</em><br>
+                        → <input type="text" placeholder="your answer" style="width: 100%; margin-top: 8px;">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Step 3: History Translations -->
+            <div class="step-section">
+                <h2>Step 3: Deep South History</h2>
+                <p style="font-style: italic; color: #4a5329; font-size: 1.1em;">Translate these historical sentences into English using the Past Perfect:</p>
+                
+                <img src="16-2903.png" alt="Deep South History Timeline" class="timeline-image">
+                
+                <!-- 1803 - Louisiana Purchase -->
+                <div class="history-label">1803 — Louisiana Purchase</div>
+                <div class="task-box">
+                    <div class="exercise-item wide">
+                        <strong>1.</strong> <em>Bevor die USA Louisiana kauften, hatten die Franzosen New Orleans gebaut.</em><br>
+                        → <input type="text" style="width: 100%; margin-top: 8px;">
+                    </div>
+                    <div class="exercise-item wide">
+                        <strong>2.</strong> <em>Frankreich hatte das Gebiet über 100 Jahre kontrolliert, bevor es verkauft wurde.</em><br>
+                        → <input type="text" style="width: 100%; margin-top: 8px;">
+                    </div>
+                    <div class="exercise-item wide">
+                        <strong>3.</strong> <em>Die Franzosen hatten viele Siedlungen gegründet, bevor die Amerikaner kamen.</em><br>
+                        → <input type="text" style="width: 100%; margin-top: 8px;">
+                    </div>
+                </div>
+                
+                <!-- 1861 - Civil War Begins -->
+                <div class="history-label">1861 — Civil War Begins</div>
+                <div class="task-box">
+                    <div class="exercise-item wide">
+                        <strong>4.</strong> <em>Die Spannungen wegen der Sklaverei waren jahrzehntelang gewachsen, bevor der Krieg begann.</em><br>
+                        → <input type="text" style="width: 100%; margin-top: 8px;">
+                    </div>
+                    <div class="exercise-item wide">
+                        <strong>5.</strong> <em>Die Südstaaten hatten sich vom Rest des Landes getrennt, als der Krieg ausbrach.</em><br>
+                        → <input type="text" style="width: 100%; margin-top: 8px;">
+                    </div>
+                    <div class="exercise-item wide">
+                        <strong>6.</strong> <em>Viele Familien hatten Sklaven auf ihren Plantagen gehabt, bevor der Konflikt eskalierte.</em><br>
+                        → <input type="text" style="width: 100%; margin-top: 8px;">
+                    </div>
+                </div>
+                
+                <!-- 1865 - Slavery Ends -->
+                <div class="history-label">1865 — Slavery Ends</div>
+                <div class="task-box">
+                    <div class="exercise-item wide">
+                        <strong>7.</strong> <em>Millionen von Afrikanern waren als Sklaven nach Amerika gebracht worden.</em><br>
+                        → <input type="text" style="width: 100%; margin-top: 8px;">
+                    </div>
+                    <div class="exercise-item wide">
+                        <strong>8.</strong> <em>Die Sklaven hatten jahrelang auf den Baumwollfeldern gearbeitet, bevor sie frei wurden.</em><br>
+                        → <input type="text" style="width: 100%; margin-top: 8px;">
+                    </div>
+                    <div class="exercise-item wide">
+                        <strong>9.</strong> <em>Der Süden hatte seine Wirtschaft auf Sklaverei aufgebaut, bevor das Gesetz sie beendete.</em><br>
+                        → <input type="text" style="width: 100%; margin-top: 8px;">
+                    </div>
+                </div>
+                
+                <!-- 1955 - Rosa Parks -->
+                <div class="history-label">1955 — Rosa Parks</div>
+                <div class="task-box">
+                    <div class="exercise-item wide">
+                        <strong>10.</strong> <em>Rosa Parks war den ganzen Tag arbeiten gewesen, als sie sich setzte.</em><br>
+                        → <input type="text" style="width: 100%; margin-top: 8px;">
+                    </div>
+                    <div class="exercise-item wide">
+                        <strong>11.</strong> <em>Schwarze Amerikaner hatten viele Jahre für ihre Rechte gekämpft, bevor Rosa Parks protestierte.</em><br>
+                        → <input type="text" style="width: 100%; margin-top: 8px;">
+                    </div>
+                    <div class="exercise-item wide">
+                        <strong>12.</strong> <em>Die Busse waren jahrelang segregiert gewesen, bevor der Boykott begann.</em><br>
+                        → <input type="text" style="width: 100%; margin-top: 8px;">
+                    </div>
+                </div>
+                
+                <!-- 1964 - Civil Rights Act -->
+                <div class="history-label">1964 — Civil Rights Act</div>
+                <div class="task-box">
+                    <div class="exercise-item wide">
+                        <strong>13.</strong> <em>Martin Luther King hatte viele friedliche Proteste organisiert, bevor das Gesetz verabschiedet wurde.</em><br>
+                        → <input type="text" style="width: 100%; margin-top: 8px;">
+                    </div>
+                    <div class="exercise-item wide">
+                        <strong>14.</strong> <em>Die Gemeinden hatten jahrelang Geld gesammelt, um die Bürgerrechtsbewegung zu unterstützen.</em><br>
+                        → <input type="text" style="width: 100%; margin-top: 8px;">
+                    </div>
+                    <div class="exercise-item wide">
+                        <strong>15.</strong> <em>Viele mutige Menschen hatten ihr Leben riskiert, bevor die Segregation endete.</em><br>
+                        → <input type="text" style="width: 100%; margin-top: 8px;">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Step 4 - Challenge -->
+            <div class="step-section">
+                <h2>Step 4: The Southern Historian</h2>
+                <p style="font-style: italic; font-size: 1.2em; color: #4a5329;">Now it's your turn to write about history!</p>
+                
+                <div class="challenge-box">
+                    <h3>The Challenge</h3>
+                    <p style="font-size: 1.15em;">Write a short paragraph (5-7 sentences) about life in the Deep South <strong>before</strong> the Civil Rights Act of 1964.</p>
+                    
+                    <h4>Requirements:</h4>
+                    <ul class="requirements">
+                        <li>Use at least <strong>4 Past Perfect sentences</strong></li>
+                        <li>Start with: <em>"Before the Civil Rights Act of 1964, life in the Deep South had been very different..."</em></li>
+                    </ul>
+                    
+                    <div class="starter-ideas">
+                        <h4>Think about:</h4>
+                        <p>• What had happened before the law changed?</p>
+                        <p>• What had people experienced?</p>
+                        <p>• What had communities done to fight for their rights?</p>
+                    </div>
+                    
+                    <h4 style="margin-top: 25px;">My Paragraph:</h4>
+                    <textarea rows="10" placeholder="Before the Civil Rights Act of 1964, life in the Deep South had been very different..."></textarea>
+                </div>
+            </div>
+            
+            <!-- Conclusion Section -->
+            <div class="section-divider" style="margin-top: 60px;">
+                <span>✨ The Stories We Remember ✨</span>
+            </div>
+            
+            <div style="text-align: center; margin: 40px 0 20px;">
+                <div class="polaroid" style="width: 500px; transform: rotate(1deg); margin: 0 auto;">
+                    <img src="polaroid_church_new.png" alt="Mt. Zion Church Community 1956">
+                    <div class="polaroid-caption">MT. ZION CHURCH, SUMMER 1956</div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; padding: 30px; font-size: 1.3em; color: var(--olive-green); font-style: italic; max-width: 700px; margin: 0 auto;">
+                <p>"Before the Civil Rights Act changed everything, communities in the Deep South <strong>had built</strong> their own strength through faith, music, and perseverance. They <strong>had kept</strong> hope alive for generations."</p>
+            </div>
+            
+        </div>
+
+        <!-- Buttons -->
+        <div class="button-container">
+            <button onclick="generatePDF()" class="pdf-button" style="margin-right: 20px;">📄 Generate PDF with Answers</button>
+            <a href="index.html" class="back-button" style="display: inline-block; background: linear-gradient(145deg, #4a6b8a 0%, #3d5a73 100%); color: #f5ede1; padding: 18px 45px; text-decoration: none; border-radius: 5px; font-size: 1.2em; font-weight: 600; font-family: 'Caveat', cursive; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);">← Back to Menu</a>
+        </div>
+    </div>
+
+    <div class="background-overlay"></div>
+    
+    <!-- Name Input Modal -->
+    <div id="nameModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 9999; justify-content: center; align-items: center;">
+        <div style="background: linear-gradient(145deg, #5f6b38 0%, #4a5329 100%); padding: 45px; border-radius: 10px; box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5); max-width: 550px; text-align: center; border: 4px solid #d97736;">
+            <h2 style="font-family: 'Caveat', cursive; color: #f5ede1; margin-bottom: 20px; font-size: 2.5em;">Welcome to Week 2 - Grammar</h2>
+            <p style="color: #f5ede1; margin-bottom: 30px; font-size: 1.2em; font-family: 'Patrick Hand', cursive;">Please enter your name to begin:</p>
+            <input type="text" id="studentNameInput" placeholder="Your full name" style="width: 100%; padding: 15px; font-size: 1.2em; border: 3px solid #d97736; border-radius: 5px; margin-bottom: 25px; background: #f5ede1; font-family: 'Patrick Hand', cursive;" autofocus>
+            <button onclick="startExercise()" style="background: linear-gradient(145deg, #d97736 0%, #c56830 100%); color: #f5ede1; border: none; padding: 18px 50px; font-size: 1.3em; border-radius: 5px; cursor: pointer; font-weight: 600; font-family: 'Caveat', cursive; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);">Start Exercise</button>
+        </div>
+    </div>
+    
+    <!-- jsPDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <script>
+        let studentName = '';
+        
+        window.onload = function() {
+            document.getElementById('nameModal').style.display = 'flex';
+            document.getElementById('studentNameInput').focus();
+            
+            document.getElementById('studentNameInput').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    startExercise();
+                }
+            });
+        };
+        
+        function startExercise() {
+            const nameInput = document.getElementById('studentNameInput').value.trim();
+            if (nameInput === '') {
+                alert('Please enter your name to continue.');
+                return;
+            }
+            studentName = nameInput;
+            document.getElementById('nameModal').style.display = 'none';
+        }
+        
+        function generatePDF() {
+            if (!studentName) {
+                alert('Student name is missing. Please refresh the page and enter your name.');
+                return;
+            }
+            
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            let yPosition = 20;
+            const pageWidth = doc.internal.pageSize.width;
+            const maxWidth = pageWidth - 40;
+            
+            function addText(text, x, y, fontSize = 12, isBold = false) {
+                doc.setFontSize(fontSize);
+                if (isBold) {
+                    doc.setFont(undefined, 'bold');
+                } else {
+                    doc.setFont(undefined, 'normal');
+                }
+                const lines = doc.splitTextToSize(text, maxWidth);
+                doc.text(lines, x, y);
+                return y + (lines.length * (fontSize * 0.5));
+            }
+            
+            function checkNewPage(requiredSpace) {
+                if (yPosition + requiredSpace > doc.internal.pageSize.height - 20) {
+                    doc.addPage();
+                    yPosition = 20;
+                }
+            }
+            
+            // Title
+            yPosition = addText('Past Perfect - Week 2 Grammar Practice', 20, yPosition, 18, true);
+            yPosition += 5;
+            doc.setDrawColor(95, 107, 56);
+            doc.line(20, yPosition, pageWidth - 20, yPosition);
+            yPosition += 10;
+            
+            const date = new Date().toLocaleDateString();
+            yPosition = addText(`Student: ${studentName}`, 20, yPosition, 12, false);
+            yPosition = addText(`Date: ${date}`, 20, yPosition, 12, false);
+            yPosition += 10;
+            
+            // Get all inputs
+            const allInputs = document.querySelectorAll('input[type="text"]');
+            const inputsArray = Array.from(allInputs);
+            
+            // Step 1: Simple Past Review - Comic Story (first 5 inputs)
+            checkNewPage(30);
+            yPosition = addText('Step 1: Simple Past Review - A Bad Day at School', 20, yPosition, 14, true);
+            yPosition += 5;
+            
+            const step1Labels = [
+                'Yesterday I ___ (sleep too long).',
+                'Then I ___ (not + get the bus to school).',
+                'At school I ___ (not + find my maths book).',
+                'Ms Rees ___ (be very angry with me).',
+                'At home I ___ (have to do lots of homework).'
+            ];
+            
+            for (let i = 0; i < 5; i++) {
+                checkNewPage(15);
+                yPosition = addText(`${i + 1}. ${step1Labels[i]}`, 20, yPosition, 10, false);
+                yPosition = addText(`   Answer: ${inputsArray[i]?.value || '(not answered)'}`, 20, yPosition, 10, false);
+                yPosition += 3;
+            }
+            
+            yPosition += 5;
+            
+            // Step 2: Past Perfect - Situations (inputs 5-7)
+            checkNewPage(30);
+            yPosition = addText('Step 2: Das Past Perfect', 20, yPosition, 14, true);
+            yPosition += 5;
+            yPosition = addText('What Happened First?', 20, yPosition, 11, true);
+            yPosition += 3;
+            
+            const step2aLabels = [
+                'Situation 1 (Bus): When I arrived at the bus stop, the bus...',
+                'Situation 2 (Test): The teacher collected the papers, when everyone...',
+                'Situation 3 (Dinner): When Dad came home, Mum...'
+            ];
+            
+            for (let i = 0; i < 3; i++) {
+                checkNewPage(15);
+                yPosition = addText(step2aLabels[i], 20, yPosition, 10, false);
+                yPosition = addText(`   Answer: ${inputsArray[i + 5]?.value || '(not answered)'}`, 20, yPosition, 10, false);
+                yPosition += 3;
+            }
+            
+            yPosition += 5;
+            
+            // Step 2: Translations (inputs 8-12)
+            checkNewPage(30);
+            yPosition = addText('Übungen A: Translate into English', 20, yPosition, 11, true);
+            yPosition += 3;
+            
+            const step2bQuestions = [
+                'Ich hatte meine Hausaufgaben vergessen.',
+                'Sie war schon eingeschlafen.',
+                'Wir hatten den Film schon gesehen.',
+                'Er hatte nichts gegessen.',
+                'Die Kinder waren nach Hause gelaufen.'
+            ];
+            
+            for (let i = 0; i < 5; i++) {
+                checkNewPage(15);
+                yPosition = addText(`${i + 1}. ${step2bQuestions[i]}`, 20, yPosition, 10, false);
+                yPosition = addText(`   Answer: ${inputsArray[i + 8]?.value || '(not answered)'}`, 20, yPosition, 10, false);
+                yPosition += 3;
+            }
+            
+            yPosition += 5;
+            
+            // Step 2: Fill in the gaps (inputs 13-17)
+            checkNewPage(30);
+            yPosition = addText('Übungen B: Fill in the gaps', 20, yPosition, 11, true);
+            yPosition += 3;
+            
+            const step2cQuestions = [
+                'When I got home, my sister ___ (eat) all the cake.',
+                'The train ___ (leave) before we arrived at the station.',
+                'She was tired because she ___ (not / sleep) well.',
+                'I ___ (never / see) such a beautiful sunset before.',
+                'They ___ (finish) their homework before dinner.'
+            ];
+            
+            for (let i = 0; i < 5; i++) {
+                checkNewPage(15);
+                yPosition = addText(`${i + 1}. ${step2cQuestions[i]}`, 20, yPosition, 10, false);
+                yPosition = addText(`   Answer: ${inputsArray[i + 13]?.value || '(not answered)'}`, 20, yPosition, 10, false);
+                yPosition += 3;
+            }
+            
+            yPosition += 5;
+            
+            // Step 2: Correct mistakes (inputs 18-20)
+            checkNewPage(30);
+            yPosition = addText('Übungen C: Correct the mistakes', 20, yPosition, 11, true);
+            yPosition += 3;
+            
+            const step2dQuestions = [
+                'She was gone to school before I woke up.',
+                'I had forgot my keys at home.',
+                'We was eaten before the movie started.'
+            ];
+            
+            for (let i = 0; i < 3; i++) {
+                checkNewPage(15);
+                yPosition = addText(`${i + 1}. ${step2dQuestions[i]}`, 20, yPosition, 10, false);
+                yPosition = addText(`   Corrected: ${inputsArray[i + 18]?.value || '(not answered)'}`, 20, yPosition, 10, false);
+                yPosition += 3;
+            }
+            
+            yPosition += 5;
+            
+            // Step 3: History translations (inputs 21-35)
+            checkNewPage(30);
+            yPosition = addText('Step 3: Deep South History', 20, yPosition, 14, true);
+            yPosition += 5;
+            
+            const historyQuestions = [
+                '1803 - Bevor die USA Louisiana kauften, hatten die Franzosen New Orleans gebaut.',
+                '1803 - Frankreich hatte das Gebiet über 100 Jahre kontrolliert...',
+                '1803 - Die Franzosen hatten viele Siedlungen gegründet...',
+                '1861 - Die Spannungen wegen der Sklaverei waren jahrzehntelang gewachsen...',
+                '1861 - Die Südstaaten hatten sich vom Rest des Landes getrennt...',
+                '1861 - Viele Familien hatten Sklaven auf ihren Plantagen gehabt...',
+                '1865 - Millionen von Afrikanern waren als Sklaven nach Amerika gebracht worden.',
+                '1865 - Die Sklaven hatten jahrelang auf den Baumwollfeldern gearbeitet...',
+                '1865 - Der Süden hatte seine Wirtschaft auf Sklaverei aufgebaut...',
+                '1955 - Rosa Parks war den ganzen Tag arbeiten gewesen...',
+                '1955 - Schwarze Amerikaner hatten viele Jahre für ihre Rechte gekämpft...',
+                '1955 - Die Busse waren jahrelang segregiert gewesen...',
+                '1964 - Martin Luther King hatte viele friedliche Proteste organisiert...',
+                '1964 - Die Gemeinden hatten jahrelang Geld gesammelt...',
+                '1964 - Viele mutige Menschen hatten ihr Leben riskiert...'
+            ];
+            
+            for (let i = 0; i < 15; i++) {
+                checkNewPage(20);
+                yPosition = addText(`${i + 1}. ${historyQuestions[i]}`, 20, yPosition, 9, false);
+                yPosition = addText(`   Translation: ${inputsArray[i + 21]?.value || '(not answered)'}`, 20, yPosition, 9, false);
+                yPosition += 3;
+            }
+            
+            // Step 4: Challenge
+            checkNewPage(40);
+            yPosition += 5;
+            yPosition = addText('Step 4: The Southern Historian', 20, yPosition, 14, true);
+            yPosition += 5;
+            
+            const textarea = document.querySelector('textarea');
+            const story = textarea?.value || '(not answered)';
+            yPosition = addText('My Paragraph:', 20, yPosition, 10, true);
+            yPosition += 2;
+            yPosition = addText(story, 20, yPosition, 10, false);
+            
+            doc.save(`Week2_Grammar_${studentName.replace(/\s+/g, '_')}_${date.replace(/\//g, '-')}.pdf`);
+        }
+    </script>
+</body>
+</html>

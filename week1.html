@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1 - Reading | English Lernzeit</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Permanent+Marker&family=Patrick+Hand&family=Caveat:wght@600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --olive-green: #5f6b38;
+            --dark-olive: #4a5329;
+            --burnt-orange: #d97736;
+            --light-orange: #e89456;
+            --vintage-cream: #f5ede1;
+            --aged-paper: #ebe3d5;
+            --dark-text: #2c2418;
+        }
+        
+        body {
+            font-family: 'Patrick Hand', cursive;
+            background-image: url('paper_texture_bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .content-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* Scrapbook Page Background */
+        .reading-content {
+            background: 
+                linear-gradient(135deg, rgba(245, 237, 225, 0.9) 0%, rgba(235, 227, 213, 0.95) 100%);
+            padding: 50px;
+            border-radius: 3px;
+            box-shadow: 
+                0 10px 40px rgba(0, 0, 0, 0.3),
+                inset 0 0 100px rgba(95, 107, 56, 0.05);
+            margin-bottom: 30px;
+            position: relative;
+            border: 1px solid rgba(95, 107, 56, 0.2);
+        }
+        
+        .reading-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(95, 107, 56, 0.02) 2px, rgba(95, 107, 56, 0.02) 4px),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(95, 107, 56, 0.02) 2px, rgba(95, 107, 56, 0.02) 4px);
+            pointer-events: none;
+            opacity: 0.5;
+        }
+        
+        /* Main Title with Handwriting */
+        .scrapbook-title {
+            font-family: 'Caveat', cursive;
+            font-size: 4em;
+            color: var(--olive-green);
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            text-shadow: 2px 2px 0px rgba(217, 119, 54, 0.1);
+        }
+        
+        /* Polaroid Photo Styling */
+        .polaroid {
+            background: white;
+            padding: 15px;
+            padding-bottom: 60px;
+            box-shadow: 
+                0 8px 20px rgba(0, 0, 0, 0.25),
+                0 2px 4px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            position: relative;
+            transform: rotate(-2deg);
+            margin: 20px;
+        }
+        
+        .polaroid img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .polaroid-caption {
+            font-family: 'Permanent Marker', cursive;
+            text-align: center;
+            margin-top: 15px;
+            font-size: 1.3em;
+            color: var(--dark-text);
+        }
+        
+        .polaroid.right {
+            transform: rotate(3deg);
+            float: right;
+        }
+        
+        .polaroid.left {
+            transform: rotate(-3deg);
+            float: left;
+        }
+        
+        /* Step Sections with Scrapbook Elements */
+        .step-section {
+            margin-bottom: 60px;
+            position: relative;
+            clear: both;
+        }
+        
+        .step-section h2 {
+            font-family: 'Caveat', cursive;
+            color: var(--olive-green);
+            font-size: 3em;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .step-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--burnt-orange);
+            transform: skewY(-1deg);
+        }
+        
+        /* Reading Text Box - looks like torn paper */
+        .reading-text {
+            background: linear-gradient(135deg, #fcf9f4 0%, #f5f0e8 100%);
+            padding: 30px;
+            border-radius: 2px;
+            margin: 25px 0;
+            position: relative;
+            box-shadow: 
+                0 4px 10px rgba(0, 0, 0, 0.15),
+                inset 0 0 0 1px rgba(95, 107, 56, 0.1);
+            font-size: 1.15em;
+            line-height: 1.9;
+            color: var(--dark-text);
+        }
+        
+        .reading-text::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            width: 100px;
+            height: 40px;
+            background-image: url('tape_strip.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            transform: rotate(-5deg);
+            opacity: 0.9;
+        }
+        
+        /* Task Box with Washi Tape */
+        .task-box {
+            background: linear-gradient(135deg, #f8f5ef 0%, #f0ebe3 100%);
+            padding: 30px;
+            border-radius: 3px;
+            margin: 25px 0;
+            position: relative;
+            border: 2px solid rgba(95, 107, 56, 0.15);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .task-box::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 250px;
+            height: 50px;
+            background-image: url('washi_floral.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.8;
+        }
+        
+        .task-box h3 {
+            font-family: 'Caveat', cursive;
+            color: var(--olive-green);
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .task-box h3 img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+        
+        /* Input Fields with Handwriting Feel */
+        .exercise-item {
+            margin: 20px 0;
+            font-size: 1.15em;
+            color: var(--dark-text);
+        }
+        
+        .exercise-item input[type="text"] {
+            border: none;
+            border-bottom: 2px dashed var(--olive-green);
+            background: transparent;
+            padding: 8px 12px;
+            font-size: 1.1em;
+            min-width: 300px;
+            font-family: 'Patrick Hand', cursive;
+            color: var(--dark-text);
+        }
+        
+        .exercise-item input[type="text"]:focus {
+            outline: none;
+            border-bottom-color: var(--burnt-orange);
+            background: rgba(217, 119, 54, 0.05);
+        }
+        
+        textarea {
+            width: 100%;
+            min-height: 150px;
+            border: 2px solid var(--olive-green);
+            border-radius: 3px;
+            padding: 15px;
+            font-size: 1.1em;
+            font-family: 'Patrick Hand', cursive;
+            line-height: 1.8;
+            background: linear-gradient(135deg, #fffcf7 0%, #faf7f0 100%);
+            color: var(--dark-text);
+            resize: vertical;
+        }
+        
+        textarea:focus {
+            outline: none;
+            border-color: var(--burnt-orange);
+            box-shadow: 0 0 0 3px rgba(217, 119, 54, 0.1);
+        }
+        
+        /* Challenge Box - Dark Scrapbook Card */
+        .challenge-box {
+            background: linear-gradient(145deg, var(--olive-green) 0%, var(--dark-olive) 100%);
+            padding: 35px;
+            border-radius: 5px;
+            margin: 30px 0;
+            position: relative;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            color: var(--vintage-cream);
+        }
+        
+        .challenge-box::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 40px;
+            height: 40px;
+            background-image: url('pushpin_orange.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+        }
+        
+        .challenge-box::after {
+            content: '';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            background-image: url('pushpin_red.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+        }
+        
+        .challenge-box h3 {
+            font-family: 'Caveat', cursive;
+            color: var(--vintage-cream);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .challenge-box h4 {
+            color: var(--light-orange);
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+        
+        .challenge-box p,
+        .challenge-box li {
+            color: var(--vintage-cream);
+        }
+        
+        .challenge-box textarea {
+            background: rgba(255, 255, 255, 0.95);
+            border-color: var(--burnt-orange);
+        }
+        
+        /* Word Bank with Tape */
+        .word-bank {
+            background: linear-gradient(135deg, #fffbf0 0%, #fff5e0 100%);
+            padding: 25px;
+            border-radius: 3px;
+            margin: 25px 0;
+            position: relative;
+            border: 3px solid var(--burnt-orange);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .word-bank::before {
+            content: '';
+            position: absolute;
+            top: -25px;
+            left: 30px;
+            width: 150px;
+            height: 60px;
+            background-image: url('tape_cross.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.9;
+        }
+        
+        .word-bank h3 {
+            font-family: 'Caveat', cursive;
+            color: var(--burnt-orange);
+            font-size: 2em;
+        }
+        
+        /* Starter Ideas Box */
+        .starter-ideas {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 20px;
+            border-radius: 3px;
+            margin: 20px 0;
+            border: 2px dashed var(--burnt-orange);
+        }
+        
+        .starter-ideas h4 {
+            color: var(--olive-green);
+            font-size: 1.3em;
+        }
+        
+        ul.requirements {
+            margin-left: 25px;
+            margin-top: 15px;
+        }
+        
+        ul.requirements li {
+            margin: 12px 0;
+            font-size: 1.1em;
+        }
+        
+        /* Buttons with Scrapbook Style */
+        .pdf-button {
+            display: inline-block;
+            background: linear-gradient(145deg, var(--burnt-orange) 0%, #c56830 100%);
+            color: var(--vintage-cream);
+            padding: 18px 45px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Caveat', cursive;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .pdf-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Decorative Elements */
+        .paper-clip {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-image: url('paperclip.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        
+        .emoji-icon {
+            font-size: 1.8em;
+            margin-right: 10px;
+        }
+        
+        /* Button Container */
+        .button-container {
+            text-align: center;
+            margin-top: 50px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-container">
+        <!-- Scrapbook Page -->
+        <div class="reading-content">
+            
+            <!-- Main Title -->
+            <h1 class="scrapbook-title">Stories from the Deep South</h1>
+            
+            <!-- Polaroid Images Side by Side -->
+            <div style="text-align: center; margin: 40px 0 60px; clear: both;">
+                <div class="polaroid left" style="width: 350px; display: inline-block; margin: 20px; transform: rotate(-3deg);">
+                    <img src="polaroid_porch.png" alt="Porch at Dusk">
+                    <div class="polaroid-caption">JULY 12, 1983</div>
+                </div>
+                
+                <div class="polaroid right" style="width: 350px; display: inline-block; margin: 20px; transform: rotate(2deg);">
+                    <img src="polaroid_swamp.png" alt="Misty Swamp">
+                    <div class="polaroid-caption">OCT 26, 1983 - SWAMP</div>
+                </div>
+            </div>
+            
+            <!-- Step 1 -->
+            <div class="step-section">
+                <h2>Step 1: The Sights and Sounds</h2>
+                <p style="font-style: italic; color: #4a5329; font-size: 1.1em;">Read the text and get to know <strong>the Deep South:</strong></p>
+                
+                <div class="reading-text">
+                    The Deep South is a very special place. The air is warm and heavy, especially downtown in the summer. Big thunderstorms roll in quickly, bringing powerful rain and wind. Outside of town, you can find dark swamps where the water stands still and deadly creatures live. Long ago, people here had to fight for civil rights and raise money to help their communities. If you sit on your porch in the afternoon, you might see a nosey neighbor walking by, looking at everyone's homes.
+                </div>
+                
+                <!-- Audio Player -->
+                <div style="text-align: center; margin: 20px 0;">
+                    <audio controls style="width: 100%; max-width: 500px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+                        <source src="step1_audio.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <p style="font-size: 0.9em; color: #5f6b38; margin-top: 10px; font-style: italic;">🔊 Listen to the text</p>
+                </div>
+                
+                <div class="word-bank">
+                    <h3>Word Bank</h3>
+                    <p style="font-size: 1.05em;"><em>Use these vocabulary words in the exercises below</em></p>
+                    <img src="wordbank_visual.png" alt="Visual Word Bank" style="width: 100%; max-width: 900px; margin: 20px auto; display: block; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                    
+                    <!-- Word Bank Audio Player -->
+                    <div style="text-align: center; margin: 20px 0;">
+                        <audio controls style="width: 100%; max-width: 500px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+                            <source src="wordbank_audio.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p style="font-size: 0.9em; color: #d97736; margin-top: 10px; font-style: italic;">🔊 Listen to the vocabulary words</p>
+                    </div>
+                </div>
+                
+                <div class="task-box">
+                    <h3><img src="checklist_icon.png" alt="Task">Task: Match the Words</h3>
+                    <p style="font-size: 1.1em;">Find the right words for the descriptions:</p>
+                    
+                    <div class="exercise-item">
+                        <strong>1.</strong> A wet area with trees and dark water: <input type="text" placeholder="your answer">
+                    </div>
+                    <div class="exercise-item">
+                        <strong>2.</strong> Very strong: <input type="text" placeholder="your answer">
+                    </div>
+                    <div class="exercise-item">
+                        <strong>3.</strong> A big storm with rain and lightning: <input type="text" placeholder="your answer">
+                    </div>
+                    <div class="exercise-item">
+                        <strong>4.</strong> Dangerous, can kill you: <input type="text" placeholder="your answer">
+                    </div>
+                    <div class="exercise-item">
+                        <strong>5.</strong> The fight for equal treatment: <input type="text" placeholder="your answer">
+                    </div>
+                    <div class="exercise-item">
+                        <strong>6.</strong> Someone who wants to know everyone's business: <input type="text" placeholder="your answer">
+                    </div>
+                    <div class="exercise-item">
+                        <strong>7.</strong> The center of a city: <input type="text" placeholder="your answer">
+                    </div>
+                    <div class="exercise-item">
+                        <strong>8.</strong> A covered area at the front of a house: <input type="text" placeholder="your answer">
+                    </div>
+                    <div class="exercise-item">
+                        <strong>9.</strong> To collect money for something important: <input type="text" placeholder="your answer">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Step 2 -->
+            <div class="step-section">
+                <h2>Step 2: Life on the Porch</h2>
+                <p style="font-style: italic; color: #4a5329; font-size: 1.1em;">Read about a hot afternoon in the Deep South:</p>
+                
+                <div class="reading-text">
+                    It's another scorching afternoon in the South. Maya sits on her porch with a glass of sweet tea, watching the quiet street. Downtown feels far away, even though it's only a few blocks. The air is thick and heavy. She can hear the cicadas buzzing in the trees. Suddenly, the sky turns dark gray. A powerful thunderstorm is coming. The wind picks up, and Maya feels the first drops of rain. Within minutes, the storm is overhead, loud and fierce. Thunder crashes, and rain pounds the roof. But Maya isn't scared. She's seen this a hundred times before. The swamps outside town will fill up with water. Maybe a nosey neighbor will call tomorrow to ask if her house is okay. That's just how it is here. After the storm passes, everything smells fresh and clean. The porch is wet, and puddles shine in the street. This is life in the Deep South.
+                </div>
+                
+                <div class="task-box">
+                    <h3><img src="checklist_icon.png" alt="Task">Task: Fill in the Blanks</h3>
+                    <p style="font-size: 1.1em;">Imagine you're sitting on the porch like Maya:</p>
+                    
+                    <div class="exercise-item">
+                        <strong>1.</strong> From my porch, I can see <input type="text" style="width: 300px;"> in the distance.
+                    </div>
+                    <div class="exercise-item">
+                        <strong>2.</strong> The wind before a <input type="text" style="width: 300px;"> feels cool and strong.
+                    </div>
+                    <div class="exercise-item">
+                        <strong>3.</strong> When it rains hard, the water runs toward the <input type="text" style="width: 300px;"> areas.
+                    </div>
+                    <div class="exercise-item">
+                        <strong>4.</strong> Sometimes a <input type="text" style="width: 300px;"> neighbor stops by to chat.
+                    </div>
+                    <div class="exercise-item">
+                        <strong>5.</strong> Long ago, people here had to <input type="text" style="width: 300px;"> to build schools.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Step 3 -->
+            <div class="step-section">
+                <h2>Step 3: A Land of History</h2>
+                
+                <div class="reading-text">
+                    <p>The Deep South is a region where nature and history are deeply connected. The land is covered with dark swamps, slow rivers, and thick forests. These swamps can be deadly. Alligators, snakes, and other dangerous animals live there. For centuries, people have had to be careful when they walk near the water. But the swamps are also beautiful and full of life. They tell stories of the past.</p>
+                    
+                    <p>In the 1950s and 1960s, the Deep South was the center of the Civil Rights Movement. African Americans fought for their rights and for equality. They organized marches, sit-ins, and protests downtown in cities like Birmingham, Montgomery, and Selma. Many brave people, including Dr. Martin Luther King Jr., worked to change unfair laws. It was a long and difficult struggle. Communities had to raise money to support the movement. They needed money for transportation, food, and legal help. People gave what they could, even when they didn't have much.</p>
+                    
+                    <p>The fight for civil rights was powerful, just like the thunderstorms that roll across the South. Both changed the landscape. Today, when you sit on a porch in a small Southern town, you can feel the weight of this history. You might see a nosey neighbor walking by, curious about what's happening on your street. You might hear the rumble of a storm coming. And you might think about the people who came before you — people who were brave enough to fight for a better future. The Deep South is a place where the past is never truly gone. It lives on in the land, the weather, and the stories people tell.</p>
+                </div>
+                
+                <div class="task-box">
+                    <h3><img src="checklist_icon.png" alt="Task">Deep Dive Questions</h3>
+                    
+                    <div class="exercise-item" style="margin-bottom: 25px;">
+                        <strong>1. Why can the swamps in the Deep South be dangerous?</strong><br>
+                        <textarea rows="3" placeholder="Write your answer here..."></textarea>
+                    </div>
+                    
+                    <div class="exercise-item" style="margin-bottom: 25px;">
+                        <strong>2. What did people in the South do during the Civil Rights Movement?</strong><br>
+                        <textarea rows="3" placeholder="Write your answer here..."></textarea>
+                    </div>
+                    
+                    <div class="exercise-item" style="margin-bottom: 25px;">
+                        <strong>3. Why did communities need to raise money during the Civil Rights Movement?</strong><br>
+                        <textarea rows="3" placeholder="Write your answer here..."></textarea>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Step 4 - Challenge -->
+            <div class="step-section">
+                <h2>Step 4: The Southern Storyteller</h2>
+                <p style="font-style: italic; font-size: 1.2em; color: #4a5329;">Now it's your turn to tell a Southern story!</p>
+                
+                <div class="challenge-box">
+                    <h3><img src="storytelling_icon.png" alt="Storytelling" style="width: 60px; height: 60px; margin-right: 15px; vertical-align: middle;">The Challenge</h3>
+                    <p style="font-size: 1.15em;">Imagine you are a <strong>nosey neighbor</strong> in a small Southern town. Last night, there was a powerful <strong>thunderstorm</strong>, and strange things happened near the <strong>swamp</strong>. Write a 5-sentence story about what you think happened.</p>
+                    
+                    <h4>Requirements:</h4>
+                    <ul class="requirements">
+                        <li>Use at least <strong>5 vocabulary words</strong></li>
+                        <li>Write exactly <strong>5 sentences</strong></li>
+                        <li>Make it mysterious and interesting!</li>
+                    </ul>
+                    
+                    <div class="starter-ideas">
+                        <h4>Starter Ideas:</h4>
+                        <p>"Last night, during the storm, I saw…"</p>
+                        <p>"Everyone in downtown is talking about…"</p>
+                        <p>"I don't think it was just the wind…"</p>
+                    </div>
+                    
+                    <h4 style="margin-top: 25px;">My Story:</h4>
+                    <textarea rows="8" placeholder="Write your mysterious 5-sentence story here..."></textarea>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Buttons -->
+        <div class="button-container">
+            <button onclick="generatePDF()" class="pdf-button" style="margin-right: 20px;">📄 Generate PDF with Answers</button>
+            <a href="index.html" class="back-button" style="display: inline-block; background: linear-gradient(145deg, #4a6b8a 0%, #3d5a73 100%); color: #f5ede1; padding: 18px 45px; text-decoration: none; border-radius: 5px; font-size: 1.2em; font-weight: 600; font-family: 'Caveat', cursive; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);">← Back to Menu</a>
+        </div>
+    </div>
+
+    <div class="background-overlay"></div>
+    
+    <!-- Name Input Modal -->
+    <div id="nameModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 9999; justify-content: center; align-items: center;">
+        <div style="background: linear-gradient(145deg, #5f6b38 0%, #4a5329 100%); padding: 45px; border-radius: 10px; box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5); max-width: 550px; text-align: center; border: 4px solid #d97736;">
+            <h2 style="font-family: 'Caveat', cursive; color: #f5ede1; margin-bottom: 20px; font-size: 2.5em;">Welcome to Week 1 - Reading</h2>
+            <p style="color: #f5ede1; margin-bottom: 30px; font-size: 1.2em; font-family: 'Patrick Hand', cursive;">Please enter your name to begin:</p>
+            <input type="text" id="studentNameInput" placeholder="Your full name" style="width: 100%; padding: 15px; font-size: 1.2em; border: 3px solid #d97736; border-radius: 5px; margin-bottom: 25px; background: #f5ede1; font-family: 'Patrick Hand', cursive;" autofocus>
+            <button onclick="startExercise()" style="background: linear-gradient(145deg, #d97736 0%, #c56830 100%); color: #f5ede1; border: none; padding: 18px 50px; font-size: 1.3em; border-radius: 5px; cursor: pointer; font-weight: 600; font-family: 'Caveat', cursive; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);">Start Exercise</button>
+        </div>
+    </div>
+    
+    <!-- jsPDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <script>
+        let studentName = '';
+        
+        window.onload = function() {
+            document.getElementById('nameModal').style.display = 'flex';
+            document.getElementById('studentNameInput').focus();
+            
+            document.getElementById('studentNameInput').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    startExercise();
+                }
+            });
+        };
+        
+        function startExercise() {
+            const nameInput = document.getElementById('studentNameInput').value.trim();
+            if (nameInput === '') {
+                alert('Please enter your name to continue.');
+                return;
+            }
+            studentName = nameInput;
+            document.getElementById('nameModal').style.display = 'none';
+        }
+        
+        function generatePDF() {
+            if (!studentName) {
+                alert('Student name is missing. Please refresh the page and enter your name.');
+                return;
+            }
+            
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            let yPosition = 20;
+            const pageWidth = doc.internal.pageSize.width;
+            const maxWidth = pageWidth - 40;
+            
+            function addText(text, x, y, fontSize = 12, isBold = false) {
+                doc.setFontSize(fontSize);
+                if (isBold) {
+                    doc.setFont(undefined, 'bold');
+                } else {
+                    doc.setFont(undefined, 'normal');
+                }
+                const lines = doc.splitTextToSize(text, maxWidth);
+                doc.text(lines, x, y);
+                return y + (lines.length * (fontSize * 0.5));
+            }
+            
+            function checkNewPage(requiredSpace) {
+                if (yPosition + requiredSpace > doc.internal.pageSize.height - 20) {
+                    doc.addPage();
+                    yPosition = 20;
+                }
+            }
+            
+            yPosition = addText('Stories from the Deep South - Week 1 Reading', 20, yPosition, 18, true);
+            yPosition += 5;
+            doc.setDrawColor(95, 107, 56);
+            doc.line(20, yPosition, pageWidth - 20, yPosition);
+            yPosition += 10;
+            
+            const date = new Date().toLocaleDateString();
+            yPosition = addText(`Student: ${studentName}`, 20, yPosition, 12, false);
+            yPosition = addText(`Date: ${date}`, 20, yPosition, 12, false);
+            yPosition += 10;
+            
+            checkNewPage(30);
+            yPosition = addText('Step 1: Match the Words and the Sentences', 20, yPosition, 14, true);
+            yPosition += 5;
+            
+            // Get all inputs from Step 1 (first 9 inputs on the page)
+            const allInputs = document.querySelectorAll('input[type="text"]');
+            const step1Inputs = Array.from(allInputs).slice(0, 9);
+            const step1Questions = [
+                'A wet area with trees and dark water',
+                'Very strong',
+                'A big storm with rain and lightning',
+                'Dangerous, can kill you',
+                'The fight for equal treatment',
+                "Someone who wants to know everyone's business",
+                'The center of a city',
+                'A covered area at the front of a house',
+                'To collect money for something important'
+            ];
+            
+            step1Inputs.forEach((input, index) => {
+                checkNewPage(15);
+                yPosition = addText(`${index + 1}. ${step1Questions[index]}:`, 20, yPosition, 10, false);
+                yPosition = addText(`   Answer: ${input.value || '(not answered)'}`, 20, yPosition, 10, false);
+                yPosition += 3;
+            });
+            
+            yPosition += 5;
+            
+            checkNewPage(30);
+            yPosition = addText('Step 2: Fill in the Blanks', 20, yPosition, 14, true);
+            yPosition += 5;
+            
+            // Get inputs from Step 2 (next 5 inputs)
+            const step2Inputs = Array.from(allInputs).slice(9, 14);
+            const step2Questions = [
+                'From my porch, I can see ___ in the distance',
+                'The wind before a ___ feels cool and strong',
+                'When it rains hard, the water runs toward the ___ areas',
+                'Sometimes a ___ neighbor stops by to chat',
+                'Long ago, people here had to ___ to build schools'
+            ];
+            
+            step2Inputs.forEach((input, index) => {
+                checkNewPage(15);
+                yPosition = addText(`${index + 1}. ${step2Questions[index]}:`, 20, yPosition, 10, false);
+                yPosition = addText(`   Answer: ${input.value || '(not answered)'}`, 20, yPosition, 10, false);
+                yPosition += 3;
+            });
+            
+            yPosition += 5;
+            
+            checkNewPage(30);
+            yPosition = addText('Step 3: Deep Dive Questions', 20, yPosition, 14, true);
+            yPosition += 5;
+            
+            // Get all textareas (first 3 are from Step 3, last one is from Step 4)
+            const allTextareas = document.querySelectorAll('textarea');
+            const step3Textareas = Array.from(allTextareas).slice(0, 3);
+            const step3Questions = [
+                'Why can the swamps in the Deep South be dangerous?',
+                'What did people in the South do during the Civil Rights Movement?',
+                'Why did communities need to raise money during the Civil Rights Movement?'
+            ];
+            
+            step3Textareas.forEach((textarea, index) => {
+                checkNewPage(25);
+                yPosition = addText(`${index + 1}. ${step3Questions[index]}`, 20, yPosition, 10, true);
+                yPosition += 2;
+                const answer = textarea.value || '(not answered)';
+                yPosition = addText(`Answer: ${answer}`, 20, yPosition, 10, false);
+                yPosition += 5;
+            });
+            
+            checkNewPage(30);
+            yPosition = addText('Step 4: The Southern Storyteller', 20, yPosition, 14, true);
+            yPosition += 5;
+            
+            // Get the last textarea (Step 4 story)
+            const storyTextarea = allTextareas[3];
+            const story = storyTextarea.value || '(not answered)';
+            yPosition = addText('My Story:', 20, yPosition, 10, true);
+            yPosition += 2;
+            yPosition = addText(story, 20, yPosition, 10, false);
+            
+            doc.save(`Week1_Reading_${studentName.replace(/\s+/g, '_')}_${date.replace(/\//g, '-')}.pdf`);
+        }
+    </script>
+</body>
+</html>
