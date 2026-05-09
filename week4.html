@@ -205,7 +205,7 @@
         }
 
         .vocab-def-de::before {
-            content: '🇩🇪 ';
+            content: '';
         }
 
         /* German translation below each fill-in sentence */
@@ -223,7 +223,7 @@
         }
 
         .de-helper::before {
-            content: '🇩🇪 ';
+            content: '';
         }
 
         .de-blank {
@@ -263,7 +263,7 @@
             margin-bottom: 8px;
         }
 
-        .vocab-emoji { font-size: 1.9em; flex-shrink: 0; }
+        .vocab-emoji { display: none; }
 
         .vocab-word {
             font-family: 'Caveat', cursive;
@@ -713,7 +713,7 @@
             </h2>
             <p style="font-style:italic; color:var(--dark-olive); font-size:1.1em; margin-bottom:20px;">
                 Before you read, learn these important words.
-                <br><strong style="color:var(--german-blue);">🇩🇪 Lerne diese wichtigen Wörter, bevor du den Text liest.</strong>
+                <br><strong style="color:var(--german-blue);">Lerne diese wichtigen Wörter, bevor du den Text liest.</strong>
             </p>
 
             <!-- Vocabulary visual grid image -->
@@ -723,7 +723,7 @@
                      style="max-width:100%; border-radius:10px; box-shadow:0 8px 30px rgba(0,0,0,0.22);">
                 <p style="color:#888; font-size:0.98em; margin-top:12px; font-style:italic;">
                     Look at the pictures — what do these words make you think of?
-                    <br><span style="color:#aaa; font-size:0.92em;">🇩🇪 Schau dir die Bilder an — woran erinnern dich diese Wörter?</span>
+                    <br><span style="color:#aaa; font-size:0.92em;">Schau dir die Bilder an — woran erinnern dich diese Wörter?</span>
                 </p>
             </div>
 
@@ -874,11 +874,10 @@
 
             <!-- Vocabulary fill-in exercise -->
             <div class="task-box" style="margin-top:40px;">
-                <h3>✏️ Vocabulary Practice</h3>
+                <h3>Vocabulary Practice</h3>
 
                 <!-- German support banner -->
                 <div class="german-support-banner">
-                    <span class="flag">🇩🇪</span>
                     <div>
                         <strong>Sprachhilfe / Language Support</strong>
                         Unter jedem englischen Satz siehst du eine deutsche Übersetzung. Sie hilft dir zu verstehen, welches Wort gesucht wird. Schaue in der Vokabelliste oben nach!
@@ -959,7 +958,7 @@
              THE TEXT
         ═══════════════════════════════════════════════════════ -->
         <div class="section-divider">
-            <span>📖 Read the Text</span>
+            <span>Read the Text</span>
         </div>
 
         <div class="step-section" style="margin-bottom:30px;">
@@ -970,7 +969,7 @@
                     <div style="font-family:'Caveat',cursive; font-size:1.8em; color:var(--burnt-orange); margin-top:8px;">A Secret Diary</div>
                     <p style="font-size:1em; color:#666; margin-top:14px; font-style:italic; line-height:1.7;">
                         This is a real story. Solomon Northup was a free Black man who was kidnapped and forced into slavery for 12 years in the Deep South of America. He later wrote a book about his experiences.
-                        <br><span style="font-size:0.92em; color:#aaa;">🇩🇪 Dies ist eine wahre Geschichte. Solomon Northup war ein freier Schwarzer Mann, der entführt und 12 Jahre lang in die Sklaverei gezwungen wurde.</span>
+                        <br><span style="font-size:0.92em; color:#aaa;">Dies ist eine wahre Geschichte. Solomon Northup war ein freier Schwarzer Mann, der entführt und 12 Jahre lang in die Sklaverei gezwungen wurde.</span>
                     </p>
                 </div>
                 <div style="flex-shrink:0; text-align:center;">
@@ -1047,7 +1046,7 @@
              STEP 2 — FIND THE MAIN IDEA
         ═══════════════════════════════════════════════════════ -->
         <div class="section-divider">
-            <span>✍️ Summarizing</span>
+            <span>Summarizing</span>
         </div>
 
         <div class="step-section">
@@ -1060,10 +1059,10 @@
             </p>
 
             <div class="tip-box">
-                <strong>💡 How to find the main idea:</strong> Ask yourself:
+                <strong>How to find the main idea:</strong> Ask yourself:
                 <em>"Who is this text about, and what is the most important thing that happens to them?"</em><br>
                 A main idea is <strong>one sentence</strong>. It does not include small details like the names of animals, or what someone ate for breakfast!<br>
-                <span style="color:#666; font-size:0.93em; display:block; margin-top:8px;">🇩🇪 <em>Frage dich: „Worum geht es in diesem Text hauptsächlich?" Die Hauptidee ist ein Satz — ohne kleine Details.</em></span>
+                <span style="color:#666; font-size:0.93em; display:block; margin-top:8px;"><em>Frage dich: „Worum geht es in diesem Text hauptsächlich?" Die Hauptidee ist ein Satz — ohne kleine Details.</em></span>
             </div>
 
             <!-- 2a: multiple choice -->
@@ -1140,65 +1139,65 @@
                 <h3>a) Important or Extra?</h3>
                 <p style="font-size:1.08em; margin-bottom:18px;">
                     A good summary only includes the <strong>most important</strong> information. Read each sentence and decide:<br>
-                    <strong style="color:#2e7d32;">👍 Important</strong> — keep it in your summary &nbsp;|&nbsp;
-                    <strong style="color:#b45000;">✂️ Extra</strong> — leave it out<br>
+                    <strong style="color:#2e7d32;">Important</strong> — keep it in your summary &nbsp;|&nbsp;
+                    <strong style="color:#b45000;">Extra</strong> — leave it out<br>
                     <span style="color:#888; font-size:0.9em;">(Eine gute Zusammenfassung enthält nur die wichtigsten Informationen. Entscheide: Wichtig oder Extra?)</span>
                 </p>
 
                 <div class="sort-item">
                     <span class="sort-item-text"><strong>1.</strong> Solomon Northup was a free Black man who lived happily in New York with his wife and three children.</span>
                     <div class="sort-buttons">
-                        <button class="sort-btn imp-btn" onclick="pickSort(this,'imp')">👍 Important</button>
-                        <button class="sort-btn ext-btn" onclick="pickSort(this,'ext')">✂️ Extra</button>
+                        <button class="sort-btn imp-btn" onclick="pickSort(this,'imp')">Important</button>
+                        <button class="sort-btn ext-btn" onclick="pickSort(this,'ext')">Extra</button>
                     </div>
                 </div>
                 <div class="sort-item">
                     <span class="sort-item-text"><strong>2.</strong> Solomon loved reading books and playing the violin at parties.</span>
                     <div class="sort-buttons">
-                        <button class="sort-btn imp-btn" onclick="pickSort(this,'imp')">👍 Important</button>
-                        <button class="sort-btn ext-btn" onclick="pickSort(this,'ext')">✂️ Extra</button>
+                        <button class="sort-btn imp-btn" onclick="pickSort(this,'imp')">Important</button>
+                        <button class="sort-btn ext-btn" onclick="pickSort(this,'ext')">Extra</button>
                     </div>
                 </div>
                 <div class="sort-item">
                     <span class="sort-item-text"><strong>3.</strong> In 1841, two men tricked Solomon into coming with them, then sold him into slavery. He woke up in chains.</span>
                     <div class="sort-buttons">
-                        <button class="sort-btn imp-btn" onclick="pickSort(this,'imp')">👍 Important</button>
-                        <button class="sort-btn ext-btn" onclick="pickSort(this,'ext')">✂️ Extra</button>
+                        <button class="sort-btn imp-btn" onclick="pickSort(this,'imp')">Important</button>
+                        <button class="sort-btn ext-btn" onclick="pickSort(this,'ext')">Extra</button>
                     </div>
                 </div>
                 <div class="sort-item">
                     <span class="sort-item-text"><strong>4.</strong> There were alligators and snakes in the swamp, and dogs were chasing Solomon.</span>
                     <div class="sort-buttons">
-                        <button class="sort-btn imp-btn" onclick="pickSort(this,'imp')">👍 Important</button>
-                        <button class="sort-btn ext-btn" onclick="pickSort(this,'ext')">✂️ Extra</button>
+                        <button class="sort-btn imp-btn" onclick="pickSort(this,'imp')">Important</button>
+                        <button class="sort-btn ext-btn" onclick="pickSort(this,'ext')">Extra</button>
                     </div>
                 </div>
                 <div class="sort-item">
                     <span class="sort-item-text"><strong>5.</strong> For many years, Solomon was forced to pick cotton every day and was treated cruelly by his bosses.</span>
                     <div class="sort-buttons">
-                        <button class="sort-btn imp-btn" onclick="pickSort(this,'imp')">👍 Important</button>
-                        <button class="sort-btn ext-btn" onclick="pickSort(this,'ext')">✂️ Extra</button>
+                        <button class="sort-btn imp-btn" onclick="pickSort(this,'imp')">Important</button>
+                        <button class="sort-btn ext-btn" onclick="pickSort(this,'ext')">Extra</button>
                     </div>
                 </div>
                 <div class="sort-item">
                     <span class="sort-item-text"><strong>6.</strong> On the boat, a woman named Eliza was crying because her children had been taken away.</span>
                     <div class="sort-buttons">
-                        <button class="sort-btn imp-btn" onclick="pickSort(this,'imp')">👍 Important</button>
-                        <button class="sort-btn ext-btn" onclick="pickSort(this,'ext')">✂️ Extra</button>
+                        <button class="sort-btn imp-btn" onclick="pickSort(this,'imp')">Important</button>
+                        <button class="sort-btn ext-btn" onclick="pickSort(this,'ext')">Extra</button>
                     </div>
                 </div>
                 <div class="sort-item">
                     <span class="sort-item-text"><strong>7.</strong> Samuel Bass, a builder from Canada, believed slavery was wrong and promised to send letters to New York to help Solomon.</span>
                     <div class="sort-buttons">
-                        <button class="sort-btn imp-btn" onclick="pickSort(this,'imp')">👍 Important</button>
-                        <button class="sort-btn ext-btn" onclick="pickSort(this,'ext')">✂️ Extra</button>
+                        <button class="sort-btn imp-btn" onclick="pickSort(this,'imp')">Important</button>
+                        <button class="sort-btn ext-btn" onclick="pickSort(this,'ext')">Extra</button>
                     </div>
                 </div>
                 <div class="sort-item">
                     <span class="sort-item-text"><strong>8.</strong> In 1853, a friend named Henry arrived with papers proving Solomon was free. After 12 years, Solomon returned home to his family.</span>
                     <div class="sort-buttons">
-                        <button class="sort-btn imp-btn" onclick="pickSort(this,'imp')">👍 Important</button>
-                        <button class="sort-btn ext-btn" onclick="pickSort(this,'ext')">✂️ Extra</button>
+                        <button class="sort-btn imp-btn" onclick="pickSort(this,'imp')">Important</button>
+                        <button class="sort-btn ext-btn" onclick="pickSort(this,'ext')">Extra</button>
                     </div>
                 </div>
             </div>
@@ -1241,7 +1240,7 @@
 
             <!-- Video -->
             <div class="task-box">
-                <h3>🎬 Watch: How to Write a Summary</h3>
+                <h3>Watch: How to Write a Summary</h3>
                 <p style="font-size:1.08em; margin-bottom:18px;">
                     Watch this short video about summarising strategies. It will help you write your final summary!<br>
                     <span style="color:#888; font-size:0.9em;">(Schau dir das Video über Zusammenfassungs-Strategien an — es hilft dir, deine abschließende Zusammenfassung zu schreiben.)</span>
@@ -1268,7 +1267,7 @@
 
             <!-- Guided final summary -->
             <div class="task-box">
-                <h3>📝 Guided Final Summary</h3>
+                <h3>Guided Final Summary</h3>
                 <p style="font-size:1.08em; margin-bottom:18px;">
                     Use your mini-summaries from Step 3 to complete this <strong>guided summary paragraph</strong>. Fill in every blank.<br>
                     <span style="color:#888; font-size:0.9em;">(Verwende deine Mini-Zusammenfassungen aus Schritt 3, um diesen geführten Absatz zu vervollständigen.)</span>
@@ -1298,7 +1297,7 @@
 
             <!-- Creative challenge -->
             <div class="challenge-box">
-                <h3>✍️ Creative Challenge</h3>
+                <h3>Creative Challenge</h3>
                 <p style="font-size:1.12em; margin-bottom:20px;">
                     You have read Solomon's diary. Now imagine you are <strong>Anne</strong> — Solomon's wife.
                     You have not heard from Solomon for <strong>12 years</strong>.<br><br>
