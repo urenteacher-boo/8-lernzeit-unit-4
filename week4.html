@@ -5,54 +5,1516 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Week 4 - Writing | English Lernzeit</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Permanent+Marker&family=Patrick+Hand&family=Caveat:wght@600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --olive-green: #5f6b38;
+            --dark-olive: #4a5329;
+            --burnt-orange: #d97736;
+            --light-orange: #e89456;
+            --vintage-cream: #f5ede1;
+            --aged-paper: #ebe3d5;
+            --dark-text: #2c2418;
+            --german-blue: #3a5c8a;
+            --german-blue-light: rgba(58, 92, 138, 0.08);
+            --german-blue-border: rgba(58, 92, 138, 0.28);
+        }
+
+        body {
+            font-family: 'Patrick Hand', cursive;
+            background-image: url('paper_texture_bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .content-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Scrapbook page */
+        .reading-content {
+            background: linear-gradient(135deg, rgba(245,237,225,0.9) 0%, rgba(235,227,213,0.95) 100%);
+            padding: 50px;
+            border-radius: 3px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3), inset 0 0 100px rgba(95,107,56,0.05);
+            margin-bottom: 30px;
+            position: relative;
+            border: 1px solid rgba(95,107,56,0.2);
+        }
+
+        .reading-content::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(95,107,56,0.02) 2px, rgba(95,107,56,0.02) 4px),
+                repeating-linear-gradient(0deg,  transparent, transparent 2px, rgba(95,107,56,0.02) 2px, rgba(95,107,56,0.02) 4px);
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        /* Titles */
+        .scrapbook-title {
+            font-family: 'Caveat', cursive;
+            font-size: 4em;
+            color: var(--olive-green);
+            text-align: center;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 0px rgba(217,119,54,0.1);
+        }
+
+        .scrapbook-subtitle {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.8em;
+            color: var(--burnt-orange);
+            text-align: center;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        /* Differentiation banner */
+        .diff-banner {
+            background: linear-gradient(135deg, #f0ebe3 0%, #e8e0d5 100%);
+            border: 2px solid rgba(95,107,56,0.2);
+            border-radius: 5px;
+            padding: 18px 25px;
+            margin: 25px 0 45px;
+            font-size: 1.05em;
+            color: var(--dark-text);
+        }
+
+        .diff-steps {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        .level-pill {
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+            white-space: nowrap;
+        }
+
+        .level-a { background: #e8f5e9; color: #2e7d32; border: 2px solid #81c784; }
+        .level-b { background: #fff8e1; color: #b45000; border: 2px solid #ffc107; }
+        .level-c { background: #fff3e0; color: #c84b00; border: 2px solid #ff8a65; }
+        .level-d { background: #fce4ec; color: #880e4f; border: 2px solid #f06292; }
+
+        /* Step sections */
+        .step-section {
+            margin-bottom: 65px;
+            position: relative;
+            clear: both;
+        }
+
+        .step-section h2 {
+            font-family: 'Caveat', cursive;
+            color: var(--olive-green);
+            font-size: 3em;
+            margin-bottom: 8px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .step-section h2::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: var(--burnt-orange);
+            transform: skewY(-1deg);
+            margin-top: 4px;
+        }
+
+        .level-badge {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 0.42em;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-weight: bold;
+            position: relative;
+            top: -4px;
+            white-space: nowrap;
+        }
+
+        /* Task box */
+        .task-box {
+            background: linear-gradient(135deg, #f8f5ef 0%, #f0ebe3 100%);
+            padding: 30px;
+            border-radius: 3px;
+            margin: 30px 0;
+            position: relative;
+            border: 2px solid rgba(95,107,56,0.15);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .task-box h3 {
+            font-family: 'Caveat', cursive;
+            color: var(--olive-green);
+            font-size: 2.2em;
+            margin-bottom: 18px;
+        }
+
+        /* ── German inclusive support elements ────────────── */
+
+        /* Banner at top of Step 1 exercises */
+        .german-support-banner {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            background: linear-gradient(135deg, rgba(58,92,138,0.1) 0%, rgba(58,92,138,0.06) 100%);
+            border: 2px solid var(--german-blue-border);
+            border-radius: 6px;
+            padding: 16px 20px;
+            margin-bottom: 24px;
+            font-size: 1.02em;
+            color: var(--dark-text);
+        }
+
+        .german-support-banner .flag {
+            font-size: 1.8em;
+            flex-shrink: 0;
+            line-height: 1.2;
+        }
+
+        .german-support-banner strong {
+            color: var(--german-blue);
+            display: block;
+            margin-bottom: 4px;
+            font-size: 1.05em;
+        }
+
+        /* German definition line inside vocab card */
+        .vocab-def-de {
+            font-size: 0.88em;
+            color: var(--german-blue);
+            font-style: italic;
+            margin-top: 7px;
+            padding-top: 7px;
+            border-top: 1px dashed var(--german-blue-border);
+            line-height: 1.5;
+        }
+
+        .vocab-def-de::before {
+            content: '🇩🇪 ';
+        }
+
+        /* German translation below each fill-in sentence */
+        .de-helper {
+            font-size: 0.93em;
+            color: var(--german-blue);
+            font-style: italic;
+            margin-top: 6px;
+            margin-bottom: 4px;
+            padding: 6px 12px;
+            background: var(--german-blue-light);
+            border-left: 3px solid var(--german-blue-border);
+            border-radius: 0 4px 4px 0;
+            line-height: 1.6;
+        }
+
+        .de-helper::before {
+            content: '🇩🇪 ';
+        }
+
+        .de-blank {
+            display: inline-block;
+            min-width: 80px;
+            border-bottom: 1.5px dashed var(--german-blue);
+            color: transparent; /* hides placeholder text visually */
+            user-select: none;
+        }
+
+        /* ── Vocabulary cards ─────────────────────────────── */
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            margin: 20px 0;
+        }
+
+        .vocab-card {
+            background: white;
+            border-radius: 8px;
+            padding: 14px 16px;
+            border: 2px solid rgba(95,107,56,0.18);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.07);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .vocab-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+        }
+
+        .vocab-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .vocab-emoji { font-size: 1.9em; flex-shrink: 0; }
+
+        .vocab-word {
+            font-family: 'Caveat', cursive;
+            font-size: 1.7em;
+            color: var(--olive-green);
+            line-height: 1.1;
+        }
+
+        .vocab-translation {
+            color: var(--burnt-orange);
+            font-size: 0.9em;
+            font-style: italic;
+        }
+
+        .vocab-definition {
+            font-size: 0.93em;
+            color: #555;
+            margin: 5px 0 3px;
+        }
+
+        .vocab-example {
+            font-size: 0.88em;
+            color: #888;
+            font-style: italic;
+            border-left: 3px solid rgba(217,119,54,0.5);
+            padding-left: 10px;
+            margin-top: 8px;
+        }
+
+        /* ── Exercise items (fill-in) ────────────────────── */
+        .exercise-item {
+            margin: 16px 0 4px;
+            font-size: 1.08em;
+            color: var(--dark-text);
+            line-height: 2;
+        }
+
+        .exercise-item input[type="text"] {
+            border: none;
+            border-bottom: 2px dashed var(--olive-green);
+            background: transparent;
+            padding: 3px 8px;
+            font-size: 1em;
+            min-width: 120px;
+            font-family: 'Patrick Hand', cursive;
+            color: var(--dark-text);
+        }
+
+        .exercise-item input[type="text"]:focus {
+            outline: none;
+            border-bottom-color: var(--burnt-orange);
+        }
+
+        /* Tip box */
+        .tip-box {
+            background: linear-gradient(135deg, #e8f0e8 0%, #d8e8d8 100%);
+            padding: 18px 22px;
+            border-radius: 3px;
+            margin: 22px 0;
+            border-left: 5px solid var(--olive-green);
+            font-size: 1.05em;
+        }
+
+        /* Section divider */
+        .section-divider {
+            text-align: center;
+            margin: 55px 0;
+            position: relative;
+        }
+
+        .section-divider::before {
+            content: '';
+            position: absolute;
+            left: 0; right: 0; top: 50%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--olive-green), transparent);
+        }
+
+        .section-divider span {
+            background: var(--vintage-cream);
+            padding: 0 28px;
+            position: relative;
+            font-family: 'Caveat', cursive;
+            font-size: 1.8em;
+            color: var(--burnt-orange);
+        }
+
+        /* Diary */
+        .diary-container {
+            background: linear-gradient(135deg, #fffdf7 0%, #f5f0e8 100%);
+            border: 1px solid rgba(95,107,56,0.2);
+            border-radius: 5px;
+            padding: 35px 45px;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .diary-container::before {
+            content: '';
+            position: absolute;
+            left: 68px;
+            top: 0; bottom: 0;
+            width: 2px;
+            background: rgba(217,119,54,0.2);
+        }
+
+        .diary-entry {
+            margin-bottom: 28px;
+            padding-left: 20px;
+        }
+
+        .diary-entry:last-child { margin-bottom: 0; }
+
+        .diary-date {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 1.35em;
+            color: var(--burnt-orange);
+            margin-bottom: 4px;
+        }
+
+        .diary-title {
+            font-family: 'Caveat', cursive;
+            font-size: 1.45em;
+            color: var(--dark-olive);
+            margin-bottom: 10px;
+        }
+
+        .diary-text {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.05em;
+            line-height: 1.95;
+            color: var(--dark-text);
+        }
+
+        hr.diary-divider {
+            border: none;
+            border-top: 1px dashed rgba(95,107,56,0.3);
+            margin: 22px 0;
+        }
+
+        /* Sort buttons */
+        .sort-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 13px 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            background: rgba(255,255,255,0.65);
+            border: 1px solid rgba(95,107,56,0.12);
+            flex-wrap: wrap;
+        }
+
+        .sort-item-text {
+            flex: 1;
+            min-width: 200px;
+            font-size: 1.04em;
+            color: var(--dark-text);
+        }
+
+        .sort-buttons { display: flex; gap: 8px; flex-shrink: 0; }
+
+        .sort-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 0.9em;
+            font-weight: bold;
+            transition: all 0.2s ease;
+            background: none;
+        }
+
+        .sort-btn.imp-btn  { border-color: #81c784; color: #2e7d32; }
+        .sort-btn.ext-btn  { border-color: #ffca28; color: #b45000; }
+        .sort-btn.sel-imp  { background: #2e7d32; color: white; border-color: #2e7d32; }
+        .sort-btn.sel-ext  { background: #b45000; color: white; border-color: #b45000; }
+
+        /* Mini-summary sentence starters */
+        .mini-summary-block { margin: 25px 0; }
+
+        .sentence-starter {
+            display: inline-block;
+            background: var(--olive-green);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 5px 5px 0 0;
+            font-size: 1.04em;
+            font-family: 'Patrick Hand', cursive;
+            line-height: 1.4;
+        }
+
+        .mini-textarea {
+            display: block;
+            width: 100%;
+            border: 2px solid var(--olive-green);
+            border-top: none;
+            border-radius: 0 5px 5px 5px;
+            padding: 12px 15px;
+            font-size: 1.05em;
+            font-family: 'Patrick Hand', cursive;
+            min-height: 75px;
+            resize: vertical;
+            background: #fffcf7;
+            color: var(--dark-text);
+            box-sizing: border-box;
+        }
+
+        .mini-textarea:focus {
+            outline: none;
+            border-color: var(--burnt-orange);
+        }
+
+        /* Guided summary frame */
+        .summary-frame {
+            background: linear-gradient(135deg, #fffdf7 0%, #f5f0e8 100%);
+            border: 2px solid var(--olive-green);
+            border-radius: 5px;
+            padding: 28px 32px;
+            margin: 20px 0;
+            font-size: 1.12em;
+            color: var(--dark-text);
+            line-height: 2.4;
+        }
+
+        .fi {
+            border: none;
+            border-bottom: 2px dashed var(--olive-green);
+            background: transparent;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1em;
+            color: var(--burnt-orange);
+            padding: 2px 6px;
+            display: inline-block;
+            min-width: 120px;
+        }
+
+        .fi.wide   { min-width: 260px; }
+        .fi.medium { min-width: 180px; }
+        .fi:focus  { outline: none; border-bottom-color: var(--burnt-orange); }
+
+        /* Global textarea */
+        textarea {
+            width: 100%;
+            min-height: 150px;
+            border: 2px solid var(--olive-green);
+            border-radius: 3px;
+            padding: 15px;
+            font-size: 1.1em;
+            font-family: 'Patrick Hand', cursive;
+            line-height: 1.85;
+            background: linear-gradient(135deg, #fffcf7 0%, #faf7f0 100%);
+            color: var(--dark-text);
+            resize: vertical;
+            box-sizing: border-box;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--burnt-orange);
+            box-shadow: 0 0 0 3px rgba(217,119,54,0.1);
+        }
+
+        /* Challenge box */
+        .challenge-box {
+            background: linear-gradient(145deg, var(--olive-green) 0%, var(--dark-olive) 100%);
+            padding: 35px;
+            border-radius: 5px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            color: var(--vintage-cream);
+        }
+
+        .challenge-box h3 {
+            font-family: 'Caveat', cursive;
+            color: var(--vintage-cream);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .challenge-box h4 {
+            color: var(--light-orange);
+            font-size: 1.4em;
+            margin: 20px 0 10px;
+        }
+
+        .challenge-box p, .challenge-box li { color: var(--vintage-cream); }
+
+        .challenge-box textarea {
+            background: rgba(255,255,255,0.95);
+            border-color: var(--burnt-orange);
+            color: var(--dark-text);
+        }
+
+        /* Video embed */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.22);
+            margin: 20px 0;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: 0;
+        }
+
+        /* Radio choices */
+        .radio-choice {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 14px 18px;
+            background: rgba(95,107,56,0.05);
+            border-radius: 5px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border-color 0.2s;
+            margin: 10px 0;
+        }
+
+        .radio-choice:hover { border-color: rgba(95,107,56,0.25); }
+
+        .radio-choice input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            margin-top: 3px;
+            flex-shrink: 0;
+            cursor: pointer;
+            accent-color: var(--olive-green);
+        }
+
+        /* Per-entry main idea rows */
+        .entry-idea-row {
+            background: white;
+            padding: 13px 16px;
+            border-radius: 5px;
+            border: 1px solid rgba(95,107,56,0.15);
+            margin: 10px 0;
+        }
+
+        .entry-idea-row input[type="text"] {
+            width: 100%;
+            margin-top: 7px;
+            border: none;
+            border-bottom: 2px dashed var(--olive-green);
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1em;
+            color: var(--dark-text);
+            background: transparent;
+            padding: 3px 6px;
+        }
+
+        .entry-idea-row input[type="text"]:focus {
+            outline: none;
+            border-bottom-color: var(--burnt-orange);
+        }
+
+        /* Buttons */
+        .button-container { text-align: center; padding: 40px 20px; }
+
+        .pdf-button {
+            background: linear-gradient(145deg, #d97736 0%, #c56830 100%);
+            color: #f5ede1;
+            border: none;
+            padding: 18px 45px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            font-family: 'Caveat', cursive;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+            transition: all 0.3s ease;
+            margin-right: 20px;
+        }
+
+        .pdf-button:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
+
+        .back-link {
+            display: inline-block;
+            background: linear-gradient(145deg, #4a6b8a 0%, #3d5a73 100%);
+            color: #f5ede1;
+            padding: 18px 45px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            font-weight: 600;
+            font-family: 'Caveat', cursive;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+        }
+
+        .background-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at center, transparent 0%, rgba(44,36,24,0.1) 100%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .vocab-grid { grid-template-columns: 1fr; }
+            .reading-content { padding: 25px 20px; }
+            .diary-container { padding: 25px 20px; }
+            .diary-container::before { display: none; }
+            .summary-frame { font-size: 1em; }
+            .fi.wide { min-width: 160px; }
+        }
+    </style>
 </head>
 <body>
-    <div class="content-container">
-        <div class="content-header">
-            <h1>Woche 4 - Week 4</h1>
-            <div class="week-type">✍️ Writing</div>
+
+<div class="content-container">
+    <div class="reading-content">
+
+        <h1 class="scrapbook-title">Writing</h1>
+        <p class="scrapbook-subtitle">Summarizing a Text · Einen Text zusammenfassen</p>
+
+        <!-- Differentiation banner -->
+        <div class="diff-banner">
+            <strong>How to use this worksheet:</strong> Work through the steps in order. Each step is a little more challenging than the one before. Your teacher will tell you how far to go.
+            <br><span style="color:#888; font-size:0.92em;">(Arbeite die Schritte der Reihe nach durch. Jeder Schritt ist etwas schwieriger. Dein Lehrer / deine Lehrerin sagt dir, wie weit du gehen sollst.)</span>
+            <div class="diff-steps">
+                <span class="level-pill level-a">Step 1 · Vocabulary</span>
+                <span style="font-size:1.3em; color:var(--olive-green);">→</span>
+                <span class="level-pill level-b">Step 2 · Main Idea</span>
+                <span style="font-size:1.3em; color:var(--olive-green);">→</span>
+                <span class="level-pill level-c">Step 3 · Mini-Summaries</span>
+                <span style="font-size:1.3em; color:var(--olive-green);">→</span>
+                <span class="level-pill level-d">Step 4 · Challenge</span>
+            </div>
         </div>
 
-        <div class="content-box">
-            <div class="placeholder-content">
-                <h3>📝 Content Placeholder</h3>
-                <p><strong>This is where your Week 4 Writing content will go.</strong></p>
-                <p>You can add:</p>
-                <ul>
-                    <li>Writing prompts and topics</li>
-                    <li>Model texts and examples</li>
-                    <li>Step-by-step writing guides</li>
-                    <li>Editing checklists</li>
-                    <li>Peer review guidelines</li>
-                    <li>Creative writing exercises</li>
-                </ul>
-                <p>Simply replace this placeholder content with your actual materials.</p>
+        <!-- ═══════════════════════════════════════════════════════
+             STEP 1 — VOCABULARY
+        ═══════════════════════════════════════════════════════ -->
+        <div class="step-section">
+            <h2>Step 1: Key Vocabulary
+                <span class="level-badge level-a">Everyone · Alle</span>
+            </h2>
+            <p style="font-style:italic; color:var(--dark-olive); font-size:1.1em; margin-bottom:20px;">
+                Before you read, learn these important words.
+                <br><strong style="color:var(--german-blue);">🇩🇪 Lerne diese wichtigen Wörter, bevor du den Text liest.</strong>
+            </p>
+
+            <!-- Vocabulary visual grid image -->
+            <div style="text-align:center; margin: 0 0 35px;">
+                <img src="vocab_grid.png"
+                     alt="Key Vocabulary: Cotton, Swamp, Slave, Segregation, Rescue, Racism, Trick, Chains, Miracle, Freedom"
+                     style="max-width:100%; border-radius:10px; box-shadow:0 8px 30px rgba(0,0,0,0.22);">
+                <p style="color:#888; font-size:0.98em; margin-top:12px; font-style:italic;">
+                    Look at the pictures — what do these words make you think of?
+                    <br><span style="color:#aaa; font-size:0.92em;">🇩🇪 Schau dir die Bilder an — woran erinnern dich diese Wörter?</span>
+                </p>
             </div>
 
-            <h2>Example Writing Exercise Structure</h2>
-            
-            <h3>Part 1: Writing Preparation</h3>
-            <p>Brainstorming activities and planning guides go here...</p>
+            <!-- Vocabulary cards -->
+            <div class="vocab-grid">
 
-            <h3>Part 2: Writing Task</h3>
-            <p>Clear instructions for the writing assignment...</p>
+                <!-- 1. cotton -->
+                <div class="vocab-card">
+                    <div class="vocab-card-header">
+                        <span class="vocab-emoji">🌾</span>
+                        <div>
+                            <div class="vocab-word">cotton</div>
+                            <div class="vocab-translation">die Baumwolle</div>
+                        </div>
+                    </div>
+                    <div class="vocab-definition">a soft white plant used to make clothes and fabric</div>
+                    <div class="vocab-def-de">Baumwolle ist eine weiche, weiße Pflanzenfaser, aus der Kleidung und Stoffe hergestellt werden.</div>
+                    <div class="vocab-example">"Every single day, I have to pick <strong>cotton</strong> under the hot sun."</div>
+                </div>
 
-            <h3>Part 3: Model Text</h3>
-            <p>Example of good writing for students to analyze...</p>
+                <!-- 2. swamp -->
+                <div class="vocab-card">
+                    <div class="vocab-card-header">
+                        <span class="vocab-emoji">🐊</span>
+                        <div>
+                            <div class="vocab-word">swamp</div>
+                            <div class="vocab-translation">der Sumpf</div>
+                        </div>
+                    </div>
+                    <div class="vocab-definition">a wet, muddy area of land with trees and wild animals</div>
+                    <div class="vocab-def-de">Ein Sumpf ist ein nasses, schlammiges Gebiet mit Bäumen und gefährlichen Tieren.</div>
+                    <div class="vocab-example">"I had to run away into a giant <strong>swamp</strong>."</div>
+                </div>
 
-            <h3>Part 4: Revision Checklist</h3>
-            <ul>
-                <li>Check 1...</li>
-                <li>Check 2...</li>
-                <li>Check 3...</li>
-            </ul>
+                <!-- 3. slave -->
+                <div class="vocab-card">
+                    <div class="vocab-card-header">
+                        <span class="vocab-emoji">⛓️</span>
+                        <div>
+                            <div class="vocab-word">slave</div>
+                            <div class="vocab-translation">der Sklave / die Sklavin</div>
+                        </div>
+                    </div>
+                    <div class="vocab-definition">a person who is owned by another and forced to work without pay</div>
+                    <div class="vocab-def-de">Ein Sklave / eine Sklavin ist eine Person, die einem anderen „gehört" und ohne Bezahlung arbeiten muss.</div>
+                    <div class="vocab-example">"A mean man told me I was a <strong>slave</strong>."</div>
+                </div>
+
+                <!-- 4. segregation -->
+                <div class="vocab-card">
+                    <div class="vocab-card-header">
+                        <span class="vocab-emoji">🚫</span>
+                        <div>
+                            <div class="vocab-word">segregation</div>
+                            <div class="vocab-translation">die Rassentrennung</div>
+                        </div>
+                    </div>
+                    <div class="vocab-definition">keeping people apart based on their race — e.g. in schools, buses, or restaurants</div>
+                    <div class="vocab-def-de">Rassentrennung bedeutet, dass Menschen wegen ihrer Hautfarbe getrennt werden — z.B. in verschiedenen Schulen oder Bussen.</div>
+                    <div class="vocab-example">"<strong>Segregation</strong> was a cruel law that treated people unequally."</div>
+                </div>
+
+                <!-- 5. rescue -->
+                <div class="vocab-card">
+                    <div class="vocab-card-header">
+                        <span class="vocab-emoji">🙏</span>
+                        <div>
+                            <div class="vocab-word">rescue</div>
+                            <div class="vocab-translation">die Rettung / retten</div>
+                        </div>
+                    </div>
+                    <div class="vocab-definition">to save someone from danger or a bad situation</div>
+                    <div class="vocab-def-de">Jemanden retten bedeutet, ihn aus einer gefährlichen oder schlimmen Situation zu befreien.</div>
+                    <div class="vocab-example">"Henry came to <strong>rescue</strong> Solomon and bring him home."</div>
+                </div>
+
+                <!-- 6. racism -->
+                <div class="vocab-card">
+                    <div class="vocab-card-header">
+                        <span class="vocab-emoji">✊</span>
+                        <div>
+                            <div class="vocab-word">racism</div>
+                            <div class="vocab-translation">der Rassismus</div>
+                        </div>
+                    </div>
+                    <div class="vocab-definition">treating people unfairly because of their race or skin colour</div>
+                    <div class="vocab-def-de">Rassismus bedeutet, Menschen aufgrund ihrer Herkunft oder Hautfarbe ungerecht zu behandeln.</div>
+                    <div class="vocab-example">"<strong>Racism</strong> made life very difficult for free Black people in America."</div>
+                </div>
+
+                <!-- 7. trick -->
+                <div class="vocab-card">
+                    <div class="vocab-card-header">
+                        <span class="vocab-emoji">🎭</span>
+                        <div>
+                            <div class="vocab-word">trick</div>
+                            <div class="vocab-translation">der Trick / austricksen</div>
+                        </div>
+                    </div>
+                    <div class="vocab-definition">to deceive someone — to make a person believe something false</div>
+                    <div class="vocab-def-de">Austricksen bedeutet, jemanden zu täuschen — jemanden etwas Falsches glauben zu lassen.</div>
+                    <div class="vocab-example">"They <strong>tricked</strong> me. When I woke up I was in chains."</div>
+                </div>
+
+                <!-- 8. chains -->
+                <div class="vocab-card">
+                    <div class="vocab-card-header">
+                        <span class="vocab-emoji">🔗</span>
+                        <div>
+                            <div class="vocab-word">chains</div>
+                            <div class="vocab-translation">die Ketten</div>
+                        </div>
+                    </div>
+                    <div class="vocab-definition">metal rings joined together, used to keep a person prisoner</div>
+                    <div class="vocab-def-de">Ketten sind verbundene Metallringe, mit denen eine Person gefangen gehalten wird, damit sie nicht fliehen kann.</div>
+                    <div class="vocab-example">"I woke up in a dark room with <strong>chains</strong> on my feet."</div>
+                </div>
+
+                <!-- 9. miracle -->
+                <div class="vocab-card">
+                    <div class="vocab-card-header">
+                        <span class="vocab-emoji">✨</span>
+                        <div>
+                            <div class="vocab-word">miracle</div>
+                            <div class="vocab-translation">das Wunder</div>
+                        </div>
+                    </div>
+                    <div class="vocab-definition">something wonderful and unexpected that happens</div>
+                    <div class="vocab-def-de">Ein Wunder ist etwas Wunderbares und Unerwartetes, das passiert — etwas, das man kaum glauben kann.</div>
+                    <div class="vocab-example">"A <strong>miracle</strong> happened! A carriage drove up and out stepped Henry."</div>
+                </div>
+
+                <!-- 10. freedom -->
+                <div class="vocab-card">
+                    <div class="vocab-card-header">
+                        <span class="vocab-emoji">🕊️</span>
+                        <div>
+                            <div class="vocab-word">freedom</div>
+                            <div class="vocab-translation">die Freiheit</div>
+                        </div>
+                    </div>
+                    <div class="vocab-definition">the state of being free — the right to choose your own life</div>
+                    <div class="vocab-def-de">Freiheit bedeutet, frei zu sein und das Recht zu haben, sein eigenes Leben selbst zu bestimmen.</div>
+                    <div class="vocab-example">"I am a free man. I can choose where I work and where I live."</div>
+                </div>
+
+            </div><!-- /vocab-grid -->
+
+            <!-- Vocabulary fill-in exercise -->
+            <div class="task-box" style="margin-top:40px;">
+                <h3>✏️ Vocabulary Practice</h3>
+
+                <!-- German support banner -->
+                <div class="german-support-banner">
+                    <span class="flag">🇩🇪</span>
+                    <div>
+                        <strong>Sprachhilfe / Language Support</strong>
+                        Unter jedem englischen Satz siehst du eine deutsche Übersetzung. Sie hilft dir zu verstehen, welches Wort gesucht wird. Schaue in der Vokabelliste oben nach!
+                        <br><span style="color:#555; font-size:0.93em;">Below each English sentence you will find a German translation. It helps you understand which word is needed. Use the vocabulary cards above!</span>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <strong>Word Bank:</strong>
+                    cotton &nbsp;·&nbsp; swamp &nbsp;·&nbsp; slave &nbsp;·&nbsp; segregation &nbsp;·&nbsp; rescue &nbsp;·&nbsp; racism &nbsp;·&nbsp; trick &nbsp;·&nbsp; chains &nbsp;·&nbsp; miracle &nbsp;·&nbsp; freedom
+                </div>
+
+                <!-- 1 -->
+                <div class="exercise-item">
+                    <strong>1.</strong> The workers had to pick <input type="text" class="vocab-input" placeholder="________"> in the burning hot fields all day long.
+                </div>
+                <div class="de-helper">Die Arbeiter mussten den ganzen Tag lang unter der brennenden Sonne <span class="de-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> pflücken.</div>
+
+                <!-- 2 -->
+                <div class="exercise-item">
+                    <strong>2.</strong> Solomon ran into the dark, wet <input type="text" class="vocab-input" placeholder="________"> to escape from his cruel boss.
+                </div>
+                <div class="de-helper">Solomon lief in den dunklen, nassen <span class="de-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>, um vor seinem grausamen Chef zu entkommen.</div>
+
+                <!-- 3 -->
+                <div class="exercise-item">
+                    <strong>3.</strong> A person who is not free and must work for another without pay is called a <input type="text" class="vocab-input" placeholder="________">.
+                </div>
+                <div class="de-helper">Eine Person, die nicht frei ist und für jemand anderen ohne Bezahlung arbeiten muss, nennt man einen <span class="de-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>.</div>
+
+                <!-- 4 -->
+                <div class="exercise-item">
+                    <strong>4.</strong> <input type="text" class="vocab-input" placeholder="________" style="min-width:160px;"> kept Black and white people apart in schools, buses, and restaurants in the Deep South.
+                </div>
+                <div class="de-helper"><span class="de-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> hielt Schwarze und weiße Menschen in Schulen, Bussen und Restaurants auseinander.</div>
+
+                <!-- 5 -->
+                <div class="exercise-item">
+                    <strong>5.</strong> Henry arrived with papers to <input type="text" class="vocab-input" placeholder="________"> Solomon and bring him back home to New York.
+                </div>
+                <div class="de-helper">Henry kam mit Papieren, um Solomon zu <span class="de-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> und ihn nach New York nach Hause zu bringen.</div>
+
+                <!-- 6 -->
+                <div class="exercise-item">
+                    <strong>6.</strong> <input type="text" class="vocab-input" placeholder="________" style="min-width:120px;"> means treating people badly and unfairly because of their race or skin colour.
+                </div>
+                <div class="de-helper"><span class="de-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> bedeutet, Menschen schlecht und ungerecht zu behandeln, weil sie eine andere Hautfarbe haben.</div>
+
+                <!-- 7 -->
+                <div class="exercise-item">
+                    <strong>7.</strong> The two men used a <input type="text" class="vocab-input" placeholder="________"> to make Solomon think they were kind and wanted to help him.
+                </div>
+                <div class="de-helper">Die zwei Männer benutzten einen <span class="de-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>, damit Solomon dachte, sie seien freundlich und wollten ihm helfen.</div>
+
+                <!-- 8 -->
+                <div class="exercise-item">
+                    <strong>8.</strong> Solomon woke up with heavy metal <input type="text" class="vocab-input" placeholder="________"> around his feet so he couldn't run away.
+                </div>
+                <div class="de-helper">Solomon wachte mit schweren Metall-<span class="de-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> um seine Füße auf, damit er nicht weglaufen konnte.</div>
+
+                <!-- 9 -->
+                <div class="exercise-item">
+                    <strong>9.</strong> It felt like a <input type="text" class="vocab-input" placeholder="________"> when a carriage arrived and a friend stepped out with papers to set Solomon free.
+                </div>
+                <div class="de-helper">Es fühlte sich wie ein <span class="de-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> an, als eine Kutsche ankam und ein Freund mit Papieren ausstieg, um Solomon zu befreien.</div>
+
+                <!-- 10 -->
+                <div class="exercise-item">
+                    <strong>10.</strong> After 12 long years, Solomon finally had his <input type="text" class="vocab-input" placeholder="________"> back — he could choose his own life again.
+                </div>
+                <div class="de-helper">Nach 12 langen Jahren hatte Solomon endlich seine <span class="de-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> zurück — er konnte sein Leben wieder selbst bestimmen.</div>
+
+            </div><!-- /task-box vocab practice -->
+        </div><!-- /step 1 -->
+
+
+        <!-- ═══════════════════════════════════════════════════════
+             THE TEXT
+        ═══════════════════════════════════════════════════════ -->
+        <div class="section-divider">
+            <span>📖 Read the Text</span>
         </div>
 
-        <div class="button-container">
-            <a href="index.html" class="back-button">← Zurück zum Menü / Back to Menu</a>
+        <div class="step-section" style="margin-bottom:30px;">
+            <!-- Two-column header: title + movie poster -->
+            <div style="display:flex; align-items:center; gap:40px; margin-bottom:30px; flex-wrap:wrap;">
+                <div style="flex:1; min-width:220px;">
+                    <div style="font-family:'Permanent Marker',cursive; font-size:2.4em; color:var(--dark-olive); line-height:1.2;">The Story of Solomon Northup</div>
+                    <div style="font-family:'Caveat',cursive; font-size:1.8em; color:var(--burnt-orange); margin-top:8px;">A Secret Diary</div>
+                    <p style="font-size:1em; color:#666; margin-top:14px; font-style:italic; line-height:1.7;">
+                        This is a real story. Solomon Northup was a free Black man who was kidnapped and forced into slavery for 12 years in the Deep South of America. He later wrote a book about his experiences.
+                        <br><span style="font-size:0.92em; color:#aaa;">🇩🇪 Dies ist eine wahre Geschichte. Solomon Northup war ein freier Schwarzer Mann, der entführt und 12 Jahre lang in die Sklaverei gezwungen wurde.</span>
+                    </p>
+                </div>
+                <div style="flex-shrink:0; text-align:center;">
+                    <div style="background:white; padding:12px; padding-bottom:52px; box-shadow:0 8px 20px rgba(0,0,0,0.25), 0 2px 4px rgba(0,0,0,0.1); display:inline-block; transform:rotate(1.5deg);">
+                        <img src="solomon_poster.png"
+                             alt="12 Years a Slave – Solomon Northup"
+                             style="width:180px; display:block;">
+                        <div style="font-family:'Permanent Marker',cursive; text-align:center; margin-top:12px; font-size:1.05em; color:var(--dark-text);">Solomon Northup</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="diary-container">
+
+                <div class="diary-entry">
+                    <div class="diary-date">1829</div>
+                    <div class="diary-title">A Happy Beginning</div>
+                    <div class="diary-text">Dear Diary, I am so happy today! I got married to Anne. We live in New York, and I am a free man. That means I can choose where I work and where I live. I love reading books and playing my violin. When I play, everyone smiles and dances!</div>
+                </div>
+
+                <hr class="diary-divider">
+
+                <div class="diary-entry">
+                    <div class="diary-date">1841</div>
+                    <div class="diary-title">The Bad Trick</div>
+                    <div class="diary-text">Dear Diary, something went wrong. I met two men who told me I could play my violin in a circus. I wanted to earn money for my three children, so I went with them. But they were not nice men. They tricked me. I got very sick, and when I woke up, I was in a dark room with chains on my feet. A mean man told me I wasn't Solomon anymore — he called me "Platt" and said I was a slave. I am so sad and scared.</div>
+                </div>
+
+                <hr class="diary-divider">
+
+                <div class="diary-entry">
+                    <div class="diary-date">1841</div>
+                    <div class="diary-title">The Long Boat Ride</div>
+                    <div class="diary-text">Dear Diary, I am on a boat called the Orleans. I met a lady named Eliza. She is crying because the bad men took her children away. It makes my heart hurt to see her so sad. I tried to send a secret letter home through a kind sailor, hoping someone will come to save me.</div>
+                </div>
+
+                <hr class="diary-divider">
+
+                <div class="diary-entry">
+                    <div class="diary-date">1842</div>
+                    <div class="diary-title">The Scary Forest</div>
+                    <div class="diary-text">Dear Diary, life is very hard now. My new boss, Tibeats, is very mean to me. One day, he tried to hurt me, and I had to run away into a giant swamp. It was very scary. There were alligators and snakes in the water, and dogs were chasing me! I ran and ran until I found a safer place to hide.</div>
+                </div>
+
+                <hr class="diary-divider">
+
+                <div class="diary-entry">
+                    <div class="diary-date">1845</div>
+                    <div class="diary-title">Working in the Fields</div>
+                    <div class="diary-text">Dear Diary, I have a new boss named Mr. Epps. Every single day, I have to pick cotton under the hot sun. If I don't pick enough, I get in big trouble. At night, I am so tired, but Mr. Epps makes me play my violin so the others have to dance. I miss my family every single day.</div>
+                </div>
+
+                <hr class="diary-divider">
+
+                <div class="diary-entry">
+                    <div class="diary-date">1852</div>
+                    <div class="diary-title">A New Friend</div>
+                    <div class="diary-text">Dear Diary, I met a man named Samuel Bass. He is a builder from Canada. He told me that he thinks slavery is wrong. I took a big chance and told him my real name is Solomon. He promised to help me! He is going to write letters to my friends in New York. Please, let them find me!</div>
+                </div>
+
+                <hr class="diary-divider">
+
+                <div class="diary-entry">
+                    <div class="diary-date">1853</div>
+                    <div class="diary-title">Going Home</div>
+                    <div class="diary-text">Dear Diary, a miracle happened! A carriage drove up, and out stepped Henry, a friend from when I was young. He had papers that proved I am a free man. I got to leave that place forever! When I got back to New York, my daughter didn't even know me because I had been gone for 12 years. We all cried and hugged. I am finally home. I am Solomon Northup again.</div>
+                </div>
+
+            </div><!-- /diary-container -->
         </div>
+
+
+        <!-- ═══════════════════════════════════════════════════════
+             STEP 2 — FIND THE MAIN IDEA
+        ═══════════════════════════════════════════════════════ -->
+        <div class="section-divider">
+            <span>✍️ Summarizing</span>
+        </div>
+
+        <div class="step-section">
+            <h2>Step 2: Find the Main Idea
+                <span class="level-badge level-b">Level 2</span>
+            </h2>
+            <p style="font-style:italic; color:var(--dark-olive); font-size:1.1em; margin-bottom:18px;">
+                The <strong>main idea</strong> is the most important message of the whole text — not every little detail!<br>
+                <span style="color:#888; font-size:0.9em;">(Die Hauptidee ist die wichtigste Aussage des Textes — nicht jedes kleine Detail!)</span>
+            </p>
+
+            <div class="tip-box">
+                <strong>💡 How to find the main idea:</strong> Ask yourself:
+                <em>"Who is this text about, and what is the most important thing that happens to them?"</em><br>
+                A main idea is <strong>one sentence</strong>. It does not include small details like the names of animals, or what someone ate for breakfast!<br>
+                <span style="color:#666; font-size:0.93em; display:block; margin-top:8px;">🇩🇪 <em>Frage dich: „Worum geht es in diesem Text hauptsächlich?" Die Hauptidee ist ein Satz — ohne kleine Details.</em></span>
+            </div>
+
+            <!-- 2a: multiple choice -->
+            <div class="task-box">
+                <h3>a) Which is the Main Idea?</h3>
+                <p style="font-size:1.08em; margin-bottom:18px;">
+                    Three sentences describe the text. Which one best describes the <strong>overall main idea</strong>? Tick the correct one.<br>
+                    <span style="color:#888; font-size:0.9em;">(Welcher Satz beschreibt die Hauptidee am besten? Kreuze den richtigen an.)</span>
+                </p>
+                <label class="radio-choice">
+                    <input type="radio" name="mainIdea" value="A">
+                    <span><strong>A.</strong> The text is about a man named Solomon who loved playing the violin and had a wife named Anne in New York.</span>
+                </label>
+                <label class="radio-choice">
+                    <input type="radio" name="mainIdea" value="B">
+                    <span><strong>B.</strong> The text tells the story of Solomon Northup, a free Black man who was tricked into slavery and spent 12 years fighting to return home to his family.</span>
+                </label>
+                <label class="radio-choice">
+                    <input type="radio" name="mainIdea" value="C">
+                    <span><strong>C.</strong> The text is about alligators and snakes in the swamps of the Deep South of America.</span>
+                </label>
+            </div>
+
+            <!-- 2b: per-entry main idea -->
+            <div class="task-box">
+                <h3>b) Main Idea of Each Entry</h3>
+                <p style="font-size:1.08em; margin-bottom:18px;">
+                    Read each diary entry again and write its <strong>main idea in a few words</strong>. Focus on what happens — not on small details.<br>
+                    <span style="color:#888; font-size:0.9em;">(Lies jeden Eintrag noch einmal und schreibe die Hauptidee in wenigen Worten auf. Fokussiere dich auf das Wichtigste.)</span>
+                </p>
+
+                <div class="entry-idea-row">
+                    <strong>1829 – A Happy Beginning:</strong>
+                    <input type="text" class="entry-input" placeholder="Main idea in a few words…">
+                </div>
+                <div class="entry-idea-row">
+                    <strong>1841 – The Bad Trick:</strong>
+                    <input type="text" class="entry-input" placeholder="Main idea in a few words…">
+                </div>
+                <div class="entry-idea-row">
+                    <strong>1841 – The Long Boat Ride:</strong>
+                    <input type="text" class="entry-input" placeholder="Main idea in a few words…">
+                </div>
+                <div class="entry-idea-row">
+                    <strong>1842 – The Scary Forest:</strong>
+                    <input type="text" class="entry-input" placeholder="Main idea in a few words…">
+                </div>
+                <div class="entry-idea-row">
+                    <strong>1845 – Working in the Fields:</strong>
+                    <input type="text" class="entry-input" placeholder="Main idea in a few words…">
+                </div>
+                <div class="entry-idea-row">
+                    <strong>1852 – A New Friend:</strong>
+                    <input type="text" class="entry-input" placeholder="Main idea in a few words…">
+                </div>
+                <div class="entry-idea-row">
+                    <strong>1853 – Going Home:</strong>
+                    <input type="text" class="entry-input" placeholder="Main idea in a few words…">
+                </div>
+            </div>
+        </div><!-- /step 2 -->
+
+
+        <!-- ═══════════════════════════════════════════════════════
+             STEP 3 — IMPORTANT vs EXTRA + MINI-SUMMARIES
+        ═══════════════════════════════════════════════════════ -->
+        <div class="step-section">
+            <h2>Step 3: Sort &amp; Summarise
+                <span class="level-badge level-c">Level 3</span>
+            </h2>
+
+            <!-- 3a -->
+            <div class="task-box">
+                <h3>a) Important or Extra?</h3>
+                <p style="font-size:1.08em; margin-bottom:18px;">
+                    A good summary only includes the <strong>most important</strong> information. Read each sentence and decide:<br>
+                    <strong style="color:#2e7d32;">👍 Important</strong> — keep it in your summary &nbsp;|&nbsp;
+                    <strong style="color:#b45000;">✂️ Extra</strong> — leave it out<br>
+                    <span style="color:#888; font-size:0.9em;">(Eine gute Zusammenfassung enthält nur die wichtigsten Informationen. Entscheide: Wichtig oder Extra?)</span>
+                </p>
+
+                <div class="sort-item">
+                    <span class="sort-item-text"><strong>1.</strong> Solomon Northup was a free Black man who lived happily in New York with his wife and three children.</span>
+                    <div class="sort-buttons">
+                        <button class="sort-btn imp-btn" onclick="pickSort(this,'imp')">👍 Important</button>
+                        <button class="sort-btn ext-btn" onclick="pickSort(this,'ext')">✂️ Extra</button>
+                    </div>
+                </div>
+                <div class="sort-item">
+                    <span class="sort-item-text"><strong>2.</strong> Solomon loved reading books and playing the violin at parties.</span>
+                    <div class="sort-buttons">
+                        <button class="sort-btn imp-btn" onclick="pickSort(this,'imp')">👍 Important</button>
+                        <button class="sort-btn ext-btn" onclick="pickSort(this,'ext')">✂️ Extra</button>
+                    </div>
+                </div>
+                <div class="sort-item">
+                    <span class="sort-item-text"><strong>3.</strong> In 1841, two men tricked Solomon into coming with them, then sold him into slavery. He woke up in chains.</span>
+                    <div class="sort-buttons">
+                        <button class="sort-btn imp-btn" onclick="pickSort(this,'imp')">👍 Important</button>
+                        <button class="sort-btn ext-btn" onclick="pickSort(this,'ext')">✂️ Extra</button>
+                    </div>
+                </div>
+                <div class="sort-item">
+                    <span class="sort-item-text"><strong>4.</strong> There were alligators and snakes in the swamp, and dogs were chasing Solomon.</span>
+                    <div class="sort-buttons">
+                        <button class="sort-btn imp-btn" onclick="pickSort(this,'imp')">👍 Important</button>
+                        <button class="sort-btn ext-btn" onclick="pickSort(this,'ext')">✂️ Extra</button>
+                    </div>
+                </div>
+                <div class="sort-item">
+                    <span class="sort-item-text"><strong>5.</strong> For many years, Solomon was forced to pick cotton every day and was treated cruelly by his bosses.</span>
+                    <div class="sort-buttons">
+                        <button class="sort-btn imp-btn" onclick="pickSort(this,'imp')">👍 Important</button>
+                        <button class="sort-btn ext-btn" onclick="pickSort(this,'ext')">✂️ Extra</button>
+                    </div>
+                </div>
+                <div class="sort-item">
+                    <span class="sort-item-text"><strong>6.</strong> On the boat, a woman named Eliza was crying because her children had been taken away.</span>
+                    <div class="sort-buttons">
+                        <button class="sort-btn imp-btn" onclick="pickSort(this,'imp')">👍 Important</button>
+                        <button class="sort-btn ext-btn" onclick="pickSort(this,'ext')">✂️ Extra</button>
+                    </div>
+                </div>
+                <div class="sort-item">
+                    <span class="sort-item-text"><strong>7.</strong> Samuel Bass, a builder from Canada, believed slavery was wrong and promised to send letters to New York to help Solomon.</span>
+                    <div class="sort-buttons">
+                        <button class="sort-btn imp-btn" onclick="pickSort(this,'imp')">👍 Important</button>
+                        <button class="sort-btn ext-btn" onclick="pickSort(this,'ext')">✂️ Extra</button>
+                    </div>
+                </div>
+                <div class="sort-item">
+                    <span class="sort-item-text"><strong>8.</strong> In 1853, a friend named Henry arrived with papers proving Solomon was free. After 12 years, Solomon returned home to his family.</span>
+                    <div class="sort-buttons">
+                        <button class="sort-btn imp-btn" onclick="pickSort(this,'imp')">👍 Important</button>
+                        <button class="sort-btn ext-btn" onclick="pickSort(this,'ext')">✂️ Extra</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3b: mini-summaries -->
+            <div class="task-box">
+                <h3>b) Build Mini-Summaries</h3>
+                <p style="font-size:1.08em; margin-bottom:22px;">
+                    Use the sentence starters below to write a <strong>mini-summary</strong> for each part of the story. Use only the <strong>important</strong> information you found above!<br>
+                    <span style="color:#888; font-size:0.9em;">(Verwende die Satzanfänge, um eine Mini-Zusammenfassung für jeden Teil zu schreiben. Nutze nur die wichtigen Informationen von oben!)</span>
+                </p>
+
+                <div class="mini-summary-block">
+                    <span class="sentence-starter">Part 1 (1829): In 1829, Solomon Northup was a free man who …</span>
+                    <textarea class="mini-textarea" rows="3" placeholder="Continue the sentence…"></textarea>
+                </div>
+                <div class="mini-summary-block">
+                    <span class="sentence-starter">Part 2 (1841–1842): However, in 1841 his life changed completely when …</span>
+                    <textarea class="mini-textarea" rows="3" placeholder="Continue the sentence…"></textarea>
+                </div>
+                <div class="mini-summary-block">
+                    <span class="sentence-starter">Part 3 (1845–1852): For many years, Solomon was forced to … but he never gave up hope because …</span>
+                    <textarea class="mini-textarea" rows="3" placeholder="Continue the sentence…"></textarea>
+                </div>
+                <div class="mini-summary-block">
+                    <span class="sentence-starter">Part 4 (1853): Finally, in 1853, Solomon …</span>
+                    <textarea class="mini-textarea" rows="3" placeholder="Continue the sentence…"></textarea>
+                </div>
+            </div>
+        </div><!-- /step 3 -->
+
+
+        <!-- ═══════════════════════════════════════════════════════
+             STEP 4 — GUIDED FINAL SUMMARY + VIDEO + CHALLENGE
+        ═══════════════════════════════════════════════════════ -->
+        <div class="step-section">
+            <h2>Step 4: Write Your Summary + The Challenge
+                <span class="level-badge level-d">Challenge</span>
+            </h2>
+
+            <!-- Video -->
+            <div class="task-box">
+                <h3>🎬 Watch: How to Write a Summary</h3>
+                <p style="font-size:1.08em; margin-bottom:18px;">
+                    Watch this short video about summarising strategies. It will help you write your final summary!<br>
+                    <span style="color:#888; font-size:0.9em;">(Schau dir das Video über Zusammenfassungs-Strategien an — es hilft dir, deine abschließende Zusammenfassung zu schreiben.)</span>
+                </p>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/z02Ie8wKKRg"
+                            title="How to Write a Summary"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div style="margin-top:28px;">
+                    <p style="font-size:1.05em; margin-bottom:12px;"><strong>After watching:</strong> Write down <strong>two tips</strong> from the video for writing a good summary:</p>
+                    <div class="exercise-item">
+                        <strong>Tip 1:</strong>
+                        <input type="text" class="video-input" placeholder="Write tip 1 here…" style="min-width:280px;">
+                    </div>
+                    <div class="exercise-item">
+                        <strong>Tip 2:</strong>
+                        <input type="text" class="video-input" placeholder="Write tip 2 here…" style="min-width:280px;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guided final summary -->
+            <div class="task-box">
+                <h3>📝 Guided Final Summary</h3>
+                <p style="font-size:1.08em; margin-bottom:18px;">
+                    Use your mini-summaries from Step 3 to complete this <strong>guided summary paragraph</strong>. Fill in every blank.<br>
+                    <span style="color:#888; font-size:0.9em;">(Verwende deine Mini-Zusammenfassungen aus Schritt 3, um diesen geführten Absatz zu vervollständigen.)</span>
+                </p>
+                <div class="summary-frame">
+                    The text <em>"The Story of Solomon Northup"</em> is about a
+                    <input type="text" class="fi medium" placeholder="who?">
+                    who lived in
+                    <input type="text" class="fi" placeholder="where?">
+                    in the 19th century.
+                    In 1829, he
+                    <input type="text" class="fi wide" placeholder="what was his life like?">.
+                    However, in 1841, everything changed:
+                    <input type="text" class="fi wide" placeholder="what happened to him?">.
+                    For the next twelve years, Solomon
+                    <input type="text" class="fi wide" placeholder="what did he suffer / have to do?">.
+                    In 1852, a man named
+                    <input type="text" class="fi" placeholder="who?">
+                    helped him by
+                    <input type="text" class="fi wide" placeholder="how did he help?">.
+                    Finally, in 1853,
+                    <input type="text" class="fi wide" placeholder="how did the story end?">.
+                    The main message of this text is that
+                    <input type="text" class="fi wide" placeholder="what does this story teach us?">.
+                </div>
+            </div>
+
+            <!-- Creative challenge -->
+            <div class="challenge-box">
+                <h3>✍️ Creative Challenge</h3>
+                <p style="font-size:1.12em; margin-bottom:20px;">
+                    You have read Solomon's diary. Now imagine you are <strong>Anne</strong> — Solomon's wife.
+                    You have not heard from Solomon for <strong>12 years</strong>.<br><br>
+                    Write a short diary entry (4–6 sentences) from <strong>Anne's point of view</strong>
+                    on the evening Solomon comes home.<br>
+                    <span style="color:rgba(245,237,225,0.75); font-size:0.9em;">(Stell dir vor, du bist Anne — Solomons Frau. Schreibe 4–6 Sätze aus ihrer Sicht an dem Abend, als Solomon nach Hause kommt.)</span>
+                </p>
+                <div class="tip-box" style="background:rgba(255,255,255,0.12); border-left-color:var(--light-orange); margin-bottom:25px;">
+                    <strong style="color:var(--light-orange);">Think about these questions to help you:</strong>
+                    <ul style="margin-top:10px; color:var(--vintage-cream);">
+                        <li>How does Anne feel when she first sees Solomon?</li>
+                        <li>What is the first thing she says or does?</li>
+                        <li>What does she notice has changed about him after 12 years?</li>
+                        <li>What are her hopes for their family's future?</li>
+                    </ul>
+                </div>
+                <h4>Dear Diary, …</h4>
+                <textarea rows="8" placeholder="Write Anne's diary entry here… (4–6 sentences)" style="margin-top:10px;"></textarea>
+            </div>
+        </div><!-- /step 4 -->
+
+    </div><!-- /reading-content -->
+
+    <!-- Buttons -->
+    <div class="button-container">
+        <button onclick="generatePDF()" class="pdf-button">Generate PDF with Answers</button>
+        <a href="index.html" class="back-link">← Back to Menu</a>
     </div>
+</div><!-- /content-container -->
 
-    <div class="background-overlay"></div>
+<div class="background-overlay"></div>
+
+<!-- Name modal -->
+<div id="nameModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.82); z-index:9999; justify-content:center; align-items:center;">
+    <div style="background:linear-gradient(145deg,#5f6b38 0%,#4a5329 100%); padding:45px; border-radius:10px; box-shadow:0 15px 50px rgba(0,0,0,0.5); max-width:550px; width:90%; text-align:center; border:4px solid #d97736;">
+        <h2 style="font-family:'Caveat',cursive; color:#f5ede1; margin-bottom:20px; font-size:2.5em;">Welcome to Week 4 – Writing</h2>
+        <p style="color:#f5ede1; margin-bottom:30px; font-size:1.2em; font-family:'Patrick Hand',cursive;">
+            Please enter your name to begin:<br>
+            <span style="font-size:0.85em; color:rgba(245,237,225,0.75);">(Gib bitte deinen Namen ein, um zu beginnen.)</span>
+        </p>
+        <input type="text" id="studentNameInput"
+               placeholder="Your full name / Dein vollständiger Name"
+               style="width:100%; padding:15px; font-size:1.15em; border:3px solid #d97736; border-radius:5px; margin-bottom:25px; background:#f5ede1; font-family:'Patrick Hand',cursive; box-sizing:border-box;"
+               autofocus>
+        <button onclick="startExercise()"
+                style="background:linear-gradient(145deg,#d97736 0%,#c56830 100%); color:#f5ede1; border:none; padding:18px 50px; font-size:1.3em; border-radius:5px; cursor:pointer; font-weight:600; font-family:'Caveat',cursive; box-shadow:0 8px 20px rgba(0,0,0,0.4);">
+            Start Exercise
+        </button>
+    </div>
+</div>
+
+<!-- jsPDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+    let studentName = '';
+
+    window.onload = function () {
+        document.getElementById('nameModal').style.display = 'flex';
+        document.getElementById('studentNameInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') startExercise();
+        });
+    };
+
+    function startExercise() {
+        const val = document.getElementById('studentNameInput').value.trim();
+        if (!val) { alert('Please enter your name to continue.'); return; }
+        studentName = val;
+        document.getElementById('nameModal').style.display = 'none';
+    }
+
+    /* Sort buttons */
+    function pickSort(btn, type) {
+        const siblings = btn.closest('.sort-buttons').querySelectorAll('.sort-btn');
+        siblings.forEach(function(b) { b.classList.remove('sel-imp', 'sel-ext'); });
+        btn.classList.add(type === 'imp' ? 'sel-imp' : 'sel-ext');
+    }
+
+    /* ── PDF generation ─────────────────────────────────── */
+    function generatePDF() {
+        if (!studentName) {
+            alert('Please enter your name first.');
+            document.getElementById('nameModal').style.display = 'flex';
+            return;
+        }
+
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        const PW = doc.internal.pageSize.getWidth();
+        const PH = doc.internal.pageSize.getHeight();
+        let y = 20;
+
+        function addText(text, x, curY, size, bold) {
+            size = size || 11;
+            bold = bold || false;
+            doc.setFontSize(size);
+            doc.setFont('helvetica', bold ? 'bold' : 'normal');
+            const lines = doc.splitTextToSize(String(text), PW - 40);
+            doc.text(lines, x, curY);
+            return curY + lines.length * size * 0.42 + 3;
+        }
+
+        function newPageIfNeeded(needed) {
+            if (y + needed > PH - 20) { doc.addPage(); y = 20; }
+        }
+
+        /* Header */
+        y = addText('Week 4 – Writing: Summarizing a Text', 20, y, 18, true);
+        y = addText('The Story of Solomon Northup', 20, y, 13, false);
+        y += 3;
+        doc.setDrawColor(95, 107, 56);
+        doc.line(20, y, PW - 20, y);
+        y += 8;
+        y = addText('Student: ' + studentName + '     Date: ' + new Date().toLocaleDateString(), 20, y, 11);
+        y += 10;
+
+        /* Step 1: Vocabulary */
+        newPageIfNeeded(30);
+        y = addText('STEP 1: Vocabulary Practice', 20, y, 13, true);
+        y += 3;
+        const vocabWords = ['cotton','swamp','slave','segregation','rescue','racism','trick','chains','miracle','freedom'];
+        const vocabInputs = document.querySelectorAll('input.vocab-input');
+        vocabWords.forEach(function(w, i) {
+            newPageIfNeeded(10);
+            y = addText((i+1) + '. ' + w + ': ' + (vocabInputs[i] ? vocabInputs[i].value || '(not answered)' : '(not answered)'), 25, y, 10);
+        });
+        y += 8;
+
+        /* Step 2a: Radio */
+        newPageIfNeeded(25);
+        y = addText('STEP 2a: Which is the Main Idea?', 20, y, 13, true);
+        const radios = document.querySelectorAll('input[type="radio"]');
+        let chosen = '(not selected)';
+        radios.forEach(function(r) { if (r.checked) chosen = r.value; });
+        y = addText('Selected option: ' + chosen, 25, y, 10);
+        y += 6;
+
+        /* Step 2b: Per-entry main ideas */
+        newPageIfNeeded(30);
+        y = addText('STEP 2b: Main Idea of Each Diary Entry', 20, y, 13, true);
+        const entryLabels = ['1829 – A Happy Beginning','1841 – The Bad Trick','1841 – The Long Boat Ride','1842 – The Scary Forest','1845 – Working in the Fields','1852 – A New Friend','1853 – Going Home'];
+        const entryInputs = document.querySelectorAll('input.entry-input');
+        entryLabels.forEach(function(lbl, i) {
+            newPageIfNeeded(12);
+            y = addText(lbl + ': ' + (entryInputs[i] ? entryInputs[i].value || '(not answered)' : '(not answered)'), 25, y, 10);
+        });
+        y += 8;
+
+        /* Step 3a: Sort */
+        newPageIfNeeded(30);
+        y = addText('STEP 3a: Important or Extra?', 20, y, 13, true);
+        const sortLabels = [
+            'Solomon was a free man in New York.',
+            'Solomon loved books and violin.',
+            'Two men tricked Solomon into slavery.',
+            'Alligators and snakes in the swamp.',
+            'Forced to pick cotton; treated cruelly.',
+            'Eliza was crying on the boat.',
+            'Samuel Bass promised to send letters.',
+            'Henry arrived with papers; Solomon went home.'
+        ];
+        document.querySelectorAll('.sort-item').forEach(function(item, i) {
+            let decision = '(not selected)';
+            if (item.querySelector('.sel-imp')) decision = 'IMPORTANT';
+            if (item.querySelector('.sel-ext')) decision = 'EXTRA';
+            newPageIfNeeded(10);
+            y = addText((i+1) + '. ' + sortLabels[i] + '  →  ' + decision, 25, y, 10);
+        });
+        y += 8;
+
+        /* Step 3b: Mini-summaries */
+        newPageIfNeeded(30);
+        y = addText('STEP 3b: Mini-Summaries', 20, y, 13, true);
+        const miniStarters = [
+            'Part 1 (1829): "In 1829, Solomon Northup was a free man who …"',
+            'Part 2 (1841–42): "However, in 1841 his life changed completely when …"',
+            'Part 3 (1845–52): "For many years, Solomon was forced to … but he never gave up because …"',
+            'Part 4 (1853): "Finally, in 1853, Solomon …"'
+        ];
+        const miniTextareas = document.querySelectorAll('textarea.mini-textarea');
+        miniStarters.forEach(function(starter, i) {
+            newPageIfNeeded(22);
+            y = addText(starter, 25, y, 10, true);
+            y = addText(miniTextareas[i] ? miniTextareas[i].value || '(not answered)' : '(not answered)', 25, y, 10);
+            y += 4;
+        });
+        y += 6;
+
+        /* Step 4: Video tips */
+        newPageIfNeeded(25);
+        y = addText('STEP 4: Video – Two Summarising Tips', 20, y, 13, true);
+        const videoInputs = document.querySelectorAll('input.video-input');
+        y = addText('Tip 1: ' + (videoInputs[0] ? videoInputs[0].value || '(not answered)' : '(not answered)'), 25, y, 10);
+        y = addText('Tip 2: ' + (videoInputs[1] ? videoInputs[1].value || '(not answered)' : '(not answered)'), 25, y, 10);
+        y += 8;
+
+        /* Step 4: Guided final summary */
+        newPageIfNeeded(30);
+        y = addText('STEP 4: Guided Final Summary', 20, y, 13, true);
+        const frameLabels = ['Who the text is about','Where he lived','Life in 1829','What happened in 1841','What Solomon suffered','Who helped him','How he helped','How the story ended','The main message'];
+        document.querySelectorAll('input.fi').forEach(function(inp, i) {
+            newPageIfNeeded(10);
+            y = addText((frameLabels[i] || 'Field ' + (i+1)) + ': ' + (inp.value || '(not answered)'), 25, y, 10);
+        });
+        y += 8;
+
+        /* Step 4: Creative challenge */
+        newPageIfNeeded(40);
+        y = addText("STEP 4: Creative Challenge – Anne's Diary", 20, y, 13, true);
+        const challengeTA = document.querySelector('.challenge-box textarea');
+        y = addText(challengeTA ? challengeTA.value || '(not answered)' : '(not answered)', 25, y, 10);
+
+        /* Save */
+        const dateStr = new Date().toLocaleDateString().replace(/\//g, '-');
+        doc.save('Week4_Writing_' + studentName.replace(/\s+/g,'_') + '_' + dateStr + '.pdf');
+    }
+</script>
 </body>
 </html>
