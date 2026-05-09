@@ -1240,27 +1240,28 @@
 
             <!-- Video -->
             <div class="task-box">
-                <h3>Watch: How to Write a Summary</h3>
+                <h3>Watch: 12 Years a Slave — Official Trailer</h3>
                 <p style="font-size:1.08em; margin-bottom:18px;">
-                    Watch this short video about summarising strategies. It will help you write your final summary!<br>
-                    <span style="color:#888; font-size:0.9em;">(Schau dir das Video über Zusammenfassungs-Strategien an — es hilft dir, deine abschließende Zusammenfassung zu schreiben.)</span>
+                    This is the official trailer for <em>12 Years a Slave</em> — the film based on Solomon Northup's true story. Watch carefully: do you recognise any scenes from the text you just read?<br>
+                    <span style="color:#888; font-size:0.9em;">(Dies ist der offizielle Trailer zu <em>12 Years a Slave</em> — dem Film, der auf Solomons wahrer Geschichte basiert. Schau genau hin: Erkennst du Szenen aus dem Text wieder?)</span>
                 </p>
                 <div class="video-wrapper">
                     <iframe src="https://www.youtube.com/embed/z02Ie8wKKRg"
-                            title="How to Write a Summary"
+                            title="12 Years a Slave – Official Trailer"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen>
                     </iframe>
                 </div>
                 <div style="margin-top:28px;">
-                    <p style="font-size:1.05em; margin-bottom:12px;"><strong>After watching:</strong> Write down <strong>two tips</strong> from the video for writing a good summary:</p>
+                    <p style="font-size:1.05em; margin-bottom:12px;"><strong>After watching:</strong> Write down <strong>2 scenes or moments</strong> from the trailer that you also read about in the text:<br>
+                    <span style="color:#888; font-size:0.9em;">(Schreibe 2 Szenen oder Momente aus dem Trailer auf, die du auch im Text gelesen hast.)</span></p>
                     <div class="exercise-item">
-                        <strong>Tip 1:</strong>
-                        <input type="text" class="video-input" placeholder="Write tip 1 here…" style="min-width:280px;">
+                        <strong>1.</strong>
+                        <input type="text" class="video-input" placeholder="Describe a scene you recognised…" style="min-width:280px;">
                     </div>
                     <div class="exercise-item">
-                        <strong>Tip 2:</strong>
-                        <input type="text" class="video-input" placeholder="Write tip 2 here…" style="min-width:280px;">
+                        <strong>2.</strong>
+                        <input type="text" class="video-input" placeholder="Describe another scene…" style="min-width:280px;">
                     </div>
                 </div>
             </div>
@@ -1486,12 +1487,12 @@
         });
         y += 6;
 
-        /* Step 4: Video tips */
+        /* Step 4: Trailer scenes */
         newPageIfNeeded(25);
-        y = addText('STEP 4: Video – Two Summarising Tips', 20, y, 13, true);
+        y = addText('STEP 4: Trailer – Recognised Scenes', 20, y, 13, true);
         const videoInputs = document.querySelectorAll('input.video-input');
-        y = addText('Tip 1: ' + (videoInputs[0] ? videoInputs[0].value || '(not answered)' : '(not answered)'), 25, y, 10);
-        y = addText('Tip 2: ' + (videoInputs[1] ? videoInputs[1].value || '(not answered)' : '(not answered)'), 25, y, 10);
+        y = addText('Scene 1: ' + (videoInputs[0] ? videoInputs[0].value || '(not answered)' : '(not answered)'), 25, y, 10);
+        y = addText('Scene 2: ' + (videoInputs[1] ? videoInputs[1].value || '(not answered)' : '(not answered)'), 25, y, 10);
         y += 8;
 
         /* Step 4: Guided final summary */
